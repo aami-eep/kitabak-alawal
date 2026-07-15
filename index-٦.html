@@ -1,0 +1,2230 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>كتابك الأول — فريق سعودي من الخبراء والباحثين</title>
+<meta name="description" content="فريق سعودي متخصص من الباحثين والخبراء يكتب ويصمم كتابك في أي موضوع تختاره، ويسلّمك حقوقًا حصرية موثقة باسمك وحدك. ضمان استرداد 100%.">
+
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/logo-192.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_SA">
+<meta property="og:site_name" content="كتابك الأول">
+<meta property="og:title" content="كتابك الأول — فريق سعودي من الخبراء والباحثين">
+<meta property="og:description" content="فريق سعودي متخصص من الباحثين والخبراء يكتب ويصمم كتابك في أي موضوع تختاره، ويسلّمك حقوقًا حصرية موثقة باسمك وحدك. ضمان استرداد 100%.">
+<meta property="og:image" content="https://YOUR-DOMAIN.com/assets/og-preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://YOUR-DOMAIN.com/">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="كتابك الأول — فريق سعودي من الخبراء والباحثين">
+<meta name="twitter:description" content="فريق سعودي متخصص من الباحثين والخبراء يكتب ويصمم كتابك في أي موضوع تختاره، ويسلّمك حقوقًا حصرية موثقة باسمك وحدك. ضمان استرداد 100%.">
+<meta name="twitter:image" content="https://YOUR-DOMAIN.com/assets/og-preview.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;500;600;700;800;900&family=Cairo:wght@300;400;500;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#0f0f14;
+    --ink-soft:#1a1a24;
+    --ink-lighter:#252532;
+    --parchment:#f3ead9;
+    --parchment-dim:#e9dcc3;
+    --parchment-muted:#c9bfa8;
+    --brass:#c9a04e;
+    --brass-light:#e8c97a;
+    --brass-dim:#8a6f35;
+    --wax:#9e2a3b;
+    --wax-dark:#7a1f2e;
+    --wax-glow:rgba(158,42,59,0.4);
+    --line: rgba(201,160,78,0.25);
+    --line-strong: rgba(201,160,78,0.5);
+    --shadow: 0 25px 60px rgba(0,0,0,0.4);
+    --shadow-brass: 0 20px 50px rgba(201,160,78,0.15);
+    --saudi-green:#006C35;
+    --saudi-green-light:#008f47;
+    --success:#25D366;
+    --success-dim:#1a9e4d;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  html{overscroll-behavior-y:none;}
+  body{
+    background:var(--ink);
+    color:var(--parchment);
+    font-family:'Cairo', sans-serif;
+    line-height:1.8;
+    overflow-x:hidden;
+    overscroll-behavior-y:none;
+  }
+  h1,h2,h3, .display{
+    font-family:'Alexandria', sans-serif;
+    font-weight:700;
+    letter-spacing:0.3px;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+  ::selection{background:var(--brass); color:var(--ink);}
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--brass-light); outline-offset:3px; border-radius:2px;
+  }
+  .skip-link{
+    position:fixed; top:-60px; right:16px; z-index:1000;
+    background:var(--brass); color:var(--ink); padding:12px 20px;
+    border-radius:2px; font-weight:700; font-size:14px; transition:top .2s ease;
+  }
+  .skip-link:focus{top:16px;}
+
+  .scroll-progress{
+    position:fixed; top:0; right:0; left:0; height:3px;
+    background:linear-gradient(90deg, var(--wax), var(--brass), var(--saudi-green));
+    z-index:1001;
+    transform-origin:right;
+    transform:scaleX(0);
+    transition:transform 0.1s linear;
+  }
+
+  .urgency-bar{
+    position:fixed; top:0; right:0; left:0; z-index:1002;
+    background:linear-gradient(135deg, var(--wax), var(--wax-dark));
+    color:var(--parchment);
+    padding:10px 20px;
+    text-align:center;
+    font-size:14px;
+    font-weight:600;
+    transform:translateY(-100%);
+    transition:transform 0.3s ease;
+    box-shadow:0 4px 20px rgba(158,42,59,0.3);
+  }
+  .urgency-bar.show{transform:translateY(0);}
+  .urgency-bar strong{color:var(--brass-light);}
+  .urgency-bar .close-urgency{
+    position:absolute; left:20px; top:50%; transform:translateY(-50%);
+    background:none; border:none; color:var(--parchment); font-size:18px;
+    cursor:pointer; opacity:0.7; transition:opacity 0.2s;
+  }
+  .urgency-bar .close-urgency:hover{opacity:1;}
+
+  header{
+    position:fixed; top:0; right:0; left:0; z-index:500;
+    background:rgba(15,15,20,0.9);
+    -webkit-backdrop-filter:blur(20px) saturate(1.2);
+    backdrop-filter:blur(20px) saturate(1.2);
+    border-bottom:1px solid var(--line);
+    transition:all .3s ease;
+    transform:translateZ(0);
+    will-change:transform;
+  }
+  header.scrolled{
+    background:rgba(15,15,20,0.97);
+    box-shadow:0 10px 40px rgba(0,0,0,0.3);
+  }
+  header.has-urgency{top:40px;}
+  nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 28px; max-width:1180px; margin:0 auto;
+  }
+  .logo{
+    font-family:'Alexandria', sans-serif; font-size:22px; font-weight:800;
+    color:var(--parchment); display:flex; align-items:center; gap:12px;
+  }
+  .logo .seal-mini{
+    width:32px;height:32px;border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, var(--wax) 0%, var(--wax-dark) 70%);
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.15), 0 0 20px var(--wax-glow);
+    flex-shrink:0;
+    position:relative;
+    overflow:hidden;
+  }
+  nav ul{list-style:none; display:flex; gap:28px; align-items:center;}
+  nav ul a{font-size:14px; color:var(--parchment-muted); transition:color .2s; font-weight:500; position:relative;}
+  nav ul a::after{
+    content:""; position:absolute; bottom:-4px; right:0; width:0; height:2px;
+    background:var(--brass); transition:width .3s ease;
+  }
+  nav ul a:hover{color:var(--brass-light);}
+  nav ul a:hover::after{width:100%;}
+  .nav-cta{
+    background:linear-gradient(135deg, var(--brass), var(--brass-dim)); 
+    color:var(--ink); padding:10px 24px;
+    border-radius:2px; font-weight:700; font-size:13px;
+    box-shadow: var(--shadow-brass);
+    transition:transform .2s ease, box-shadow .2s ease;
+    position:relative;
+    overflow:hidden;
+  }
+  .nav-cta::before{
+    content:""; position:absolute; inset:0;
+    background:linear-gradient(135deg, var(--brass-light), var(--brass));
+    opacity:0; transition:opacity .3s ease;
+  }
+  .nav-cta:hover{transform:translateY(-2px); box-shadow:0 15px 40px rgba(201,160,78,0.25);}
+  .nav-cta:hover::before{opacity:1;}
+  .nav-cta span{position:relative; z-index:1;}
+  .nav-toggle{display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:6px; z-index:600;}
+  .nav-toggle span{width:24px;height:2px;background:var(--parchment); transition:transform .3s ease, opacity .3s ease;}
+  .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav-toggle.open span:nth-child(2){opacity:0;}
+  .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .mobile-menu{
+    display:none; flex-direction:column; gap:2px;
+    max-height:0; overflow:hidden;
+    transition:max-height .35s ease;
+    border-top:0 solid var(--line);
+  }
+  .mobile-menu.open{max-height:400px; border-top-width:1px;}
+  .mobile-menu a{
+    padding:16px 28px; color:var(--parchment-muted); font-size:16px;
+    border-bottom:1px solid rgba(201,160,78,0.1);
+    transition:background .2s, color .2s;
+  }
+  .mobile-menu a:hover{background:rgba(201,160,78,0.05); color:var(--brass-light);}
+  .mobile-menu .nav-cta{margin:16px 28px; text-align:center; border-bottom:none;}
+
+  .chat-widget{
+    position:fixed; left:22px; bottom:90px; z-index:400;
+    width:60px; height:60px; border-radius:50%;
+    background:linear-gradient(135deg, var(--brass), var(--brass-dim));
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 12px 30px rgba(0,0,0,0.4);
+    transition:transform .2s ease, box-shadow .2s ease;
+    cursor:pointer;
+    animation: pulseChat 2s infinite;
+  }
+  .chat-widget:hover{transform:scale(1.1); box-shadow:0 15px 40px rgba(201,160,78,0.3);}
+  @keyframes pulseChat{
+    0%, 100%{box-shadow:0 0 0 0 rgba(201,160,78,0.4);}
+    50%{box-shadow:0 0 0 15px rgba(201,160,78,0);}
+  }
+  .chat-widget svg{width:28px;height:28px;}
+  .chat-tooltip{
+    position:absolute; right:70px; top:50%; transform:translateY(-50%);
+    background:var(--ink-soft); color:var(--parchment);
+    padding:8px 16px; border-radius:8px; font-size:13px;
+    white-space:nowrap; opacity:0; pointer-events:none;
+    transition:opacity 0.3s ease;
+    border:1px solid var(--line);
+  }
+  .chat-widget:hover .chat-tooltip{opacity:1;}
+
+  .float-wa{
+    position:fixed; left:22px; bottom:22px; z-index:400;
+    width:60px; height:60px; border-radius:50%;
+    background:#25D366; display:flex; align-items:center; justify-content:center;
+    box-shadow:0 12px 30px rgba(0,0,0,0.4);
+    transition:transform .2s ease, box-shadow .2s ease;
+    animation: pulseWa 2s infinite;
+  }
+  .float-wa:hover{transform:scale(1.1); box-shadow:0 15px 40px rgba(37,211,102,0.3);}
+  @keyframes pulseWa{
+    0%, 100%{box-shadow:0 0 0 0 rgba(37,211,102,0.4);}
+    50%{box-shadow:0 0 0 15px rgba(37,211,102,0);}
+  }
+  .float-wa svg{width:28px;height:28px;}
+
+  .hero{
+    min-height:100vh;
+    min-height:100svh;
+    display:flex; align-items:center;
+    position:relative;
+    padding:140px 0 100px;
+    background:
+      radial-gradient(ellipse at 70% 10%, rgba(201,160,78,0.12), transparent 50%),
+      radial-gradient(ellipse at 20% 80%, rgba(158,42,59,0.12), transparent 50%),
+      radial-gradient(ellipse at 50% 50%, rgba(0,108,53,0.05), transparent 60%),
+      var(--ink);
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute; bottom:0; right:0; left:0; height:200px;
+    background:linear-gradient(to top, var(--ink), transparent);
+    pointer-events:none;
+  }
+  .hero-grid{
+    display:grid; grid-template-columns:1.15fr 0.85fr; gap:60px; align-items:center;
+    position:relative; z-index:2;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:12px;
+    color:var(--brass-light); font-size:13px; letter-spacing:2px;
+    text-transform:uppercase; margin-bottom:24px;
+    font-weight:600;
+  }
+  .eyebrow::before{content:"";width:40px;height:1.5px;background:linear-gradient(90deg, var(--brass), transparent);}
+  .hero h1{
+    font-size:clamp(38px, 5.5vw, 68px);
+    line-height:1.1;
+    color:var(--parchment);
+    margin-bottom:28px;
+    font-weight:800;
+  }
+  .hero h1 em{
+    font-style:normal; font-weight:400; color:var(--brass-light);
+    position:relative;
+  }
+  .hero h1 em::after{
+    content:"";
+    position:absolute; bottom:2px; right:0; left:0; height:8px;
+    background:linear-gradient(90deg, var(--wax), var(--brass));
+    opacity:0.3;
+    border-radius:2px;
+  }
+  .hero p.lead{
+    font-size:18px; color:var(--parchment-dim); max-width:520px; margin-bottom:40px;
+    line-height:1.9;
+  }
+  .cta-row{display:flex; gap:16px; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:10px;
+    padding:16px 32px; border-radius:3px; font-weight:700; font-size:15px;
+    transition:transform .2s ease, box-shadow .2s ease;
+    cursor:pointer; border:none;
+    position:relative; overflow:hidden;
+  }
+  .btn-primary{
+    background:linear-gradient(135deg, var(--wax), var(--wax-dark)); 
+    color:var(--parchment); 
+    box-shadow:0 10px 30px rgba(158,42,59,0.3);
+  }
+  .btn-primary:hover{transform:translateY(-3px); box-shadow:0 20px 50px rgba(158,42,59,0.4);}
+  .btn-ghost{
+    border:1.5px solid var(--line); color:var(--parchment);
+    background:rgba(201,160,78,0.03);
+  }
+  .btn-ghost:hover{border-color:var(--brass-light); background:rgba(201,160,78,0.1); transform:translateY(-2px);}
+  .btn-saudi{
+    background:linear-gradient(135deg, var(--saudi-green), var(--saudi-green-light));
+    color:#fff;
+    box-shadow:0 10px 30px rgba(0,108,53,0.3);
+  }
+  .btn-saudi:hover{transform:translateY(-3px); box-shadow:0 20px 50px rgba(0,108,53,0.4);}
+  .btn-gold{
+    background:linear-gradient(135deg, var(--brass), var(--brass-dim));
+    color:var(--ink);
+    box-shadow:0 10px 30px rgba(201,160,78,0.3);
+  }
+  .btn-gold:hover{transform:translateY(-3px); box-shadow:0 20px 50px rgba(201,160,78,0.4);}
+
+  .trust-bar{display:flex; gap:12px; flex-wrap:wrap; margin-top:32px;}
+  .trust-bar span{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:13px; color:var(--parchment-muted);
+    border:1px solid var(--line); border-radius:24px; padding:8px 16px;
+    background:rgba(201,160,78,0.03);
+    transition:all .3s ease;
+  }
+  .trust-bar span:hover{border-color:var(--brass-light); background:rgba(201,160,78,0.08); transform:translateY(-1px);}
+  .trust-bar span::before{content:"●"; color:var(--brass-light); font-size:8px;}
+
+  .guarantee-badge{
+    display:inline-flex; align-items:center; gap:12px;
+    background:linear-gradient(135deg, rgba(0,108,53,0.15), rgba(0,108,53,0.05));
+    border:1.5px solid rgba(0,108,53,0.3);
+    border-radius:12px;
+    padding:16px 24px;
+    margin-top:24px;
+    font-size:14px;
+    color:var(--parchment);
+    transition:all 0.3s ease;
+  }
+  .guarantee-badge:hover{
+    background:linear-gradient(135deg, rgba(0,108,53,0.2), rgba(0,108,53,0.08));
+    border-color:rgba(0,108,53,0.5);
+    transform:translateY(-2px);
+  }
+  .guarantee-badge .icon{
+    width:40px; height:40px; border-radius:50%;
+    background:var(--saudi-green);
+    display:flex; align-items:center; justify-content:center;
+    font-size:20px;
+    flex-shrink:0;
+  }
+  .guarantee-badge strong{
+    color:var(--saudi-green-light);
+    display:block;
+    font-size:15px;
+    margin-bottom:2px;
+  }
+
+  .seal-wrap{
+    display:flex; align-items:center; justify-content:center; position:relative;
+  }
+  .seal{
+    width:300px; height:300px; border-radius:50%;
+    background:radial-gradient(circle at 32% 28%, #b5323f 0%, var(--wax) 45%, var(--wax-dark) 100%);
+    box-shadow: 0 30px 70px rgba(158,42,59,0.35), inset 0 0 0 2px rgba(255,255,255,0.08), 0 0 60px rgba(158,42,59,0.15);
+    display:flex; align-items:center; justify-content:center;
+    position:relative;
+    transform: scale(0) rotate(-25deg);
+    animation: stampIn 1.2s cubic-bezier(.2,1.4,.4,1) .5s forwards;
+  }
+  .seal::before{
+    content:"";
+    position:absolute; inset:16px;
+    border-radius:50%;
+    border:1.5px dashed rgba(243,234,217,0.4);
+  }
+  .seal-text{
+    font-family:'Alexandria', sans-serif; color:var(--parchment); text-align:center;
+    font-size:15px; letter-spacing:2px; line-height:2;
+  }
+  .seal-text strong{display:block; font-size:28px; margin-bottom:6px; font-weight:800;}
+  @keyframes stampIn{
+    0%{transform:scale(0) rotate(-25deg); opacity:0;}
+    60%{transform:scale(1.08) rotate(3deg); opacity:1;}
+    100%{transform:scale(1) rotate(-6deg); opacity:1;}
+  }
+  .seal-wrap .ring-orbit{
+    position:absolute; width:380px; height:380px; border:1px solid var(--line); border-radius:50%;
+    animation: spin 50s linear infinite;
+  }
+  .seal-wrap .ring-orbit-2{
+    position:absolute; width:440px; height:440px; border:1px dashed var(--line); border-radius:50%;
+    animation: spin-reverse 60s linear infinite;
+  }
+  @keyframes spin{to{transform:rotate(360deg);}}
+  @keyframes spin-reverse{to{transform:rotate(-360deg);}}
+
+  .stats-bar{
+    background:var(--ink-soft);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    padding:50px 0;
+    position:relative;
+  }
+  .stats-bar::before{
+    content:"";
+    position:absolute; top:0; right:0; left:0; height:1px;
+    background:linear-gradient(90deg, transparent, var(--brass), transparent);
+    opacity:0.5;
+  }
+  .stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:30px;
+    text-align:center;
+  }
+  .stat-item{
+    padding:20px;
+    border-radius:8px;
+    transition:background .3s ease;
+  }
+  .stat-item:hover{background:rgba(201,160,78,0.05);}
+  .stat-num{
+    font-family:'Alexandria', sans-serif;
+    font-size:clamp(32px, 3.5vw, 48px);
+    font-weight:800;
+    color:var(--brass-light);
+    line-height:1;
+    margin-bottom:10px;
+    background:linear-gradient(135deg, var(--brass-light), var(--brass));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+  }
+  .stat-label{
+    font-size:14px;
+    color:var(--parchment-muted);
+    font-weight:500;
+  }
+
+  .topics-strip{padding:30px 0; background:var(--ink-soft); border-bottom:1px solid var(--line);}
+  .topics-strip .wrap{display:flex; align-items:center; gap:24px; flex-wrap:wrap;}
+  .topics-label{color:var(--brass-light); font-size:14px; font-weight:700; flex-shrink:0;}
+  .topics-track{display:flex; flex-wrap:wrap; gap:10px;}
+  .topics-track span{
+    border:1px solid var(--line); border-radius:24px; padding:8px 18px;
+    font-size:13.5px; color:var(--parchment-muted);
+    transition:all .3s ease; cursor:default;
+    background:rgba(201,160,78,0.02);
+  }
+  .topics-track span:hover{border-color:var(--brass-light); color:var(--parchment); background:rgba(201,160,78,0.08); transform:translateY(-2px);}
+
+  section{padding:120px 0; position:relative;}
+  .section-head{max-width:680px; margin-bottom:72px;}
+  .section-head .eyebrow{margin-bottom:18px;}
+  .section-head h2{font-size:clamp(32px,4.5vw,48px); color:var(--parchment); margin-bottom:18px; line-height:1.2;}
+  .section-head p{color:var(--parchment-dim); font-size:17.5px; line-height:1.8;}
+  .divider{
+    height:1px; background:linear-gradient(90deg, transparent, var(--line), transparent);
+    margin:0;
+  }
+
+  .reveal{opacity:0; transform:translateY(30px); transition:opacity .9s ease, transform .9s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+  .reveal-delay-1{transition-delay:0.1s;}
+  .reveal-delay-2{transition-delay:0.2s;}
+  .reveal-delay-3{transition-delay:0.3s;}
+
+  .why-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:4px; overflow:hidden;}
+  .why-card{background:var(--ink); padding:48px 36px; transition:background .3s ease; position:relative;}
+  .why-card::before{
+    content:""; position:absolute; top:0; right:0; left:0; height:3px;
+    background:linear-gradient(90deg, var(--wax), var(--brass));
+    opacity:0; transition:opacity .3s ease;
+  }
+  .why-card:hover{background:var(--ink-soft);}
+  .why-card:hover::before{opacity:1;}
+  .why-card .num{font-family:'Cairo',sans-serif; text-transform:uppercase; color:var(--brass); font-size:13px; letter-spacing:2px; margin-bottom:20px; display:block; font-weight:700;}
+  .why-card h3{font-size:22px; color:var(--parchment); margin-bottom:16px;}
+  .why-card p{color:var(--parchment-dim); font-size:15.5px; line-height:1.9;}
+
+  .team-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:28px;
+  }
+  .team-card{
+    background:var(--ink-soft);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:48px 32px;
+    text-align:center;
+    transition:transform .4s ease, border-color .4s ease, box-shadow .4s ease;
+    position:relative;
+    overflow:hidden;
+  }
+  .team-card::before{
+    content:""; position:absolute; top:0; right:0; left:0; height:0;
+    background:linear-gradient(180deg, rgba(201,160,78,0.1), transparent);
+    transition:height .4s ease;
+  }
+  .team-card:hover{
+    transform:translateY(-8px);
+    border-color:var(--brass);
+    box-shadow:var(--shadow-brass);
+  }
+  .team-card:hover::before{height:100px;}
+  .team-icon{
+    width:68px; height:68px;
+    border-radius:50%;
+    background:linear-gradient(135deg, var(--brass-light), var(--brass));
+    margin:0 auto 24px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:28px;
+    box-shadow:0 8px 25px rgba(201,160,78,0.2);
+    transition:transform .3s ease;
+  }
+  .team-card:hover .team-icon{transform:scale(1.1) rotate(-5deg);}
+  .team-card h3{
+    font-size:21px;
+    color:var(--parchment);
+    margin-bottom:12px;
+  }
+  .team-card p{
+    font-size:14.5px;
+    color:var(--parchment-dim);
+    line-height:1.9;
+  }
+
+  .saudi-team-banner{
+    background:linear-gradient(135deg, rgba(0,108,53,0.08), rgba(201,160,78,0.05));
+    border:1px solid rgba(0,108,53,0.2);
+    border-radius:8px;
+    padding:40px;
+    margin-top:60px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+  }
+  .saudi-team-banner h3{
+    font-size:26px;
+    color:var(--parchment);
+    margin-bottom:16px;
+  }
+  .saudi-team-banner p{
+    color:var(--parchment-dim);
+    font-size:16px;
+    line-height:1.9;
+  }
+  .saudi-team-stats{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:20px;
+  }
+  .saudi-stat{
+    text-align:center;
+    padding:24px;
+    background:rgba(0,108,53,0.08);
+    border-radius:6px;
+    border:1px solid rgba(0,108,53,0.15);
+  }
+  .saudi-stat .num{
+    font-family:'Alexandria', sans-serif;
+    font-size:32px;
+    font-weight:800;
+    color:var(--saudi-green-light);
+    margin-bottom:6px;
+  }
+  .saudi-stat .label{
+    font-size:13px;
+    color:var(--parchment-muted);
+  }
+
+  .process{
+    background: var(--parchment); color: var(--ink);
+    border-radius:6px;
+    padding:80px 60px;
+    position:relative;
+    box-shadow: var(--shadow);
+    overflow:hidden;
+  }
+  .process::before{
+    content:"";
+    position:absolute; top:0; right:0; width:200px; height:200px;
+    background:radial-gradient(circle, rgba(201,160,78,0.1), transparent 70%);
+  }
+  .process .section-head p{color:#5a5545;}
+  .process .section-head h2{color:var(--ink);}
+  .process .eyebrow{color:var(--wax);}
+  .process .eyebrow::before{background:var(--wax);}
+  .steps{display:grid; grid-template-columns:repeat(4,1fr); gap:40px; margin-top:20px; position:relative; z-index:1;}
+  .step{position:relative; padding-top:30px; border-top:2px solid var(--ink); transition:border-color .3s ease;}
+  .step:hover{border-top-color:var(--wax);}
+  .step .step-num{font-family:'Cairo',sans-serif; font-size:14px; color:var(--wax); font-weight:700; margin-bottom:16px; display:block;}
+  .step h3{font-size:19px; margin-bottom:12px; color:var(--ink); font-weight:700;}
+  .step p{font-size:14.5px; color:#5a5545; line-height:1.8;}
+  .step-connector{
+    position:absolute; top:-1px; right:0; width:40px; height:2px;
+    background:var(--wax);
+  }
+
+  .comparison-section{
+    background:var(--ink-soft);
+    border:1.5px solid var(--line);
+    border-radius:6px;
+    padding:72px 48px;
+    position:relative;
+    overflow:hidden;
+  }
+  .comparison-section::before{
+    content:"";
+    position:absolute; top:0; right:0; left:0; height:3px;
+    background:linear-gradient(90deg, var(--wax), var(--brass), var(--saudi-green));
+  }
+  .comparison-table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:40px;
+    font-size:15px;
+  }
+  .comparison-table th{
+    background:rgba(201,160,78,0.1);
+    color:var(--brass-light);
+    padding:16px 20px;
+    text-align:right;
+    font-weight:700;
+    border-bottom:2px solid var(--line);
+  }
+  .comparison-table td{
+    padding:16px 20px;
+    border-bottom:1px solid var(--line);
+    color:var(--parchment-dim);
+  }
+  .comparison-table tr:hover td{
+    background:rgba(201,160,78,0.03);
+  }
+  .comparison-table .check{
+    color:var(--saudi-green-light);
+    font-weight:700;
+  }
+  .comparison-table .cross{
+    color:var(--wax);
+    font-weight:700;
+  }
+  .comparison-table .highlight{
+    background:rgba(201,160,78,0.08);
+    border-right:3px solid var(--brass);
+  }
+  .comparison-table .highlight td{
+    color:var(--parchment);
+    font-weight:500;
+  }
+
+  .calculator{
+    background:var(--ink-soft);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:56px 48px;
+    max-width:820px;
+    margin:0 auto;
+    position:relative;
+    overflow:hidden;
+  }
+  .calculator::before{
+    content:"";
+    position:absolute; top:-50%; right:-50%; width:100%; height:100%;
+    background:radial-gradient(circle, rgba(201,160,78,0.03), transparent 70%);
+    pointer-events:none;
+  }
+  .calc-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:28px;
+    margin-bottom:28px;
+    position:relative; z-index:1;
+  }
+  .calc-field label{
+    display:block;
+    font-size:14px;
+    color:var(--parchment-muted);
+    margin-bottom:10px;
+    font-weight:500;
+  }
+  .calc-field select,
+  .calc-field input{
+    width:100%;
+    padding:16px 18px;
+    background:var(--ink);
+    border:1.5px solid var(--line);
+    border-radius:4px;
+    color:var(--parchment);
+    font-family:'Cairo', sans-serif;
+    font-size:15px;
+    outline:none;
+    transition:border-color .2s, box-shadow .2s;
+  }
+  .calc-field select:focus,
+  .calc-field input:focus{
+    border-color:var(--brass-light);
+    box-shadow:0 0 0 3px rgba(201,160,78,0.1);
+  }
+  .calc-result{
+    background:var(--ink);
+    border:1.5px solid var(--brass);
+    border-radius:4px;
+    padding:36px;
+    text-align:center;
+    margin-top:16px;
+    position:relative;
+    z-index:1;
+    transition:box-shadow .3s ease;
+  }
+  .calc-result:hover{box-shadow:var(--shadow-brass);}
+  .calc-result .result-label{
+    font-size:14px;
+    color:var(--parchment-muted);
+    margin-bottom:10px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+  }
+  .calc-result .result-price{
+    font-family:'Alexandria', sans-serif;
+    font-size:40px;
+    font-weight:800;
+    color:var(--brass-light);
+    background:linear-gradient(135deg, var(--brass-light), var(--brass));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+  }
+  .calc-result .result-note{
+    font-size:13px;
+    color:var(--parchment-muted);
+    margin-top:12px;
+  }
+  .installment-note{
+    background:rgba(0,108,53,0.1);
+    border:1.5px solid rgba(0,108,53,0.3);
+    border-radius:8px;
+    padding:16px 20px;
+    margin-top:20px;
+    text-align:center;
+    font-size:14px;
+    color:var(--parchment);
+  }
+  .installment-note strong{
+    color:var(--saudi-green-light);
+    display:block;
+    margin-bottom:4px;
+    font-size:16px;
+  }
+
+  .packages{display:grid; grid-template-columns:repeat(3,1fr); gap:28px;}
+  .pkg{
+    border:1.5px solid var(--line); border-radius:6px; padding:44px 34px;
+    display:flex; flex-direction:column; position:relative;
+    transition:transform .4s ease, border-color .4s ease, background .4s ease, box-shadow .4s ease;
+    background:rgba(201,160,78,0.02);
+  }
+  .pkg:hover{transform:translateY(-10px); border-color:var(--brass); background:rgba(201,160,78,0.05); box-shadow:var(--shadow-brass);}
+  .pkg.featured{
+    border-color:var(--brass); 
+    background:rgba(201,160,78,0.06);
+    transform:scale(1.02);
+  }
+  .pkg.featured:hover{transform:scale(1.02) translateY(-10px);}
+  .pkg .tag{
+    position:absolute; top:-14px; right:34px; 
+    background:linear-gradient(135deg, var(--brass), var(--brass-dim)); 
+    color:var(--ink);
+    font-size:12px; font-weight:700; padding:6px 16px; border-radius:3px; letter-spacing:0.5px;
+    box-shadow:0 4px 15px rgba(201,160,78,0.3);
+  }
+  .pkg h3{font-family:'Alexandria', sans-serif; font-size:26px; color:var(--parchment); margin-bottom:10px;}
+  .pkg .desc{color:var(--parchment-dim); font-size:15px; margin-bottom:28px; min-height:48px; line-height:1.7;}
+  .pkg .price{
+    font-family:'Cairo',sans-serif; font-weight:700; font-size:17px; 
+    color:var(--brass-light); margin-bottom:16px; padding-bottom:16px; 
+    border-bottom:1px solid var(--line);
+  }
+  .pkg .installment{
+    font-size:13px;
+    color:var(--saudi-green-light);
+    margin-bottom:16px;
+    font-weight:600;
+  }
+  .pkg ul{list-style:none; margin-bottom:36px; flex-grow:1;}
+  .pkg li{font-size:14.5px; color:var(--parchment-dim); padding-right:24px; position:relative; margin-bottom:14px; line-height:1.7;}
+  .pkg li::before{content:"✓"; position:absolute; right:0; color:var(--brass); font-weight:700;}
+  .pkg .btn{width:100%; justify-content:center;}
+
+  .samples-preview{
+    background:var(--ink-soft); 
+    border:1px solid var(--line); 
+    border-radius:6px; 
+    padding:64px;
+    position:relative;
+    overflow:hidden;
+  }
+  .samples-preview::before{
+    content:"";
+    position:absolute; top:0; right:0; left:0; height:3px;
+    background:linear-gradient(90deg, var(--wax), var(--brass), var(--saudi-green));
+  }
+  .samples-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:48px;}
+  .sample-card{
+    background:var(--ink); border:1.5px solid var(--line); border-radius:6px;
+    padding:32px 28px; transition:transform .4s ease, border-color .4s ease, box-shadow .4s ease;
+    position:relative;
+    overflow:hidden;
+  }
+  .sample-card::after{
+    content:""; position:absolute; bottom:0; right:0; left:0; height:3px;
+    background:linear-gradient(90deg, var(--wax), var(--brass));
+    opacity:0; transition:opacity .3s ease;
+  }
+  .sample-card:hover{transform:translateY(-8px); border-color:var(--brass); box-shadow:var(--shadow-brass);}
+  .sample-card:hover::after{opacity:1;}
+  .sample-card .sc-mark{
+    width:40px; height:40px; border-radius:50%;
+    background:radial-gradient(circle at 32% 28%, #b5323f 0%, var(--wax) 45%, var(--wax-dark) 100%);
+    margin-bottom:20px;
+    box-shadow:0 4px 15px rgba(158,42,59,0.3);
+  }
+  .sample-card h3{font-size:19px; color:var(--parchment); margin-bottom:10px;}
+  .sample-card p{font-size:14px; color:var(--parchment-dim); line-height:1.8;}
+  .samples-cta{margin-top:48px; text-align:center;}
+
+  .success-stories{
+    background:var(--ink-soft);
+    border:1.5px solid var(--line);
+    border-radius:6px;
+    padding:72px 48px;
+    position:relative;
+    overflow:hidden;
+  }
+  .success-stories::before{
+    content:"";
+    position:absolute; top:0; right:0; left:0; height:3px;
+    background:linear-gradient(90deg, var(--wax), var(--brass), var(--saudi-green));
+  }
+  .stories-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:28px;
+    margin-top:48px;
+  }
+  .story-card{
+    background:var(--ink);
+    border:1.5px solid var(--line);
+    border-radius:6px;
+    overflow:hidden;
+    transition:transform .4s ease, border-color .4s ease, box-shadow .4s ease;
+  }
+  .story-card:hover{
+    transform:translateY(-8px);
+    border-color:var(--brass);
+    box-shadow:var(--shadow-brass);
+  }
+  .story-card .story-image{
+    width:100%;
+    height:200px;
+    background:linear-gradient(135deg, var(--ink-lighter), var(--ink-soft));
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:60px;
+    position:relative;
+    overflow:hidden;
+  }
+  .story-card .story-image::after{
+    content:"";
+    position:absolute; inset:0;
+    background:linear-gradient(to top, var(--ink), transparent);
+  }
+  .story-card .story-content{
+    padding:28px 24px;
+  }
+  .story-card .story-tag{
+    display:inline-block;
+    background:rgba(201,160,78,0.1);
+    color:var(--brass-light);
+    padding:4px 12px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:600;
+    margin-bottom:12px;
+  }
+  .story-card h3{
+    font-size:18px;
+    color:var(--parchment);
+    margin-bottom:10px;
+  }
+  .story-card p{
+    font-size:14px;
+    color:var(--parchment-dim);
+    line-height:1.8;
+    margin-bottom:16px;
+  }
+  .story-card .story-meta{
+    display:flex;
+    gap:12px;
+    font-size:12px;
+    color:var(--parchment-muted);
+  }
+  .story-card .story-meta span{
+    display:flex;
+    align-items:center;
+    gap:4px;
+  }
+
+  .rights{
+    background:var(--ink-soft);
+    border:1.5px solid var(--line);
+    border-radius:6px;
+    padding:72px;
+    display:grid; grid-template-columns:1fr 340px; gap:60px; align-items:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .rights::before{
+    content:"";
+    position:absolute; top:0; right:0; width:300px; height:300px;
+    background:radial-gradient(circle, rgba(201,160,78,0.05), transparent 70%);
+  }
+  .rights h2{font-size:clamp(28px,3.5vw,38px); color:var(--parchment); margin-bottom:24px; line-height:1.3;}
+  .rights p{color:var(--parchment-dim); font-size:16.5px; margin-bottom:16px; line-height:1.9;}
+  .rights ul{margin-top:24px;}
+  .rights li{color:var(--parchment-dim); font-size:15.5px; margin-bottom:12px; padding-right:28px; position:relative; line-height:1.8;}
+  .rights li::before{content:"✓"; position:absolute; right:0; color:var(--brass-light); font-weight:700;}
+  .cert{
+    background:var(--parchment); color:var(--ink); border-radius:4px; padding:40px 32px;
+    text-align:center; box-shadow:var(--shadow); position:relative;
+    border:2px solid var(--brass);
+    transform:rotate(-2deg);
+    transition:transform .3s ease;
+  }
+  .cert:hover{transform:rotate(0deg) scale(1.02);}
+  .cert::before, .cert::after{
+    content:""; position:absolute; top:12px; bottom:12px; width:1px;
+    border-right:1.5px dashed rgba(158,42,59,0.3);
+  }
+  .cert::before{right:12px;} .cert::after{left:12px;}
+  .cert h4{font-family:'Cairo',sans-serif; font-weight:700; font-size:14px; letter-spacing:2px; color:var(--wax); margin-bottom:20px;}
+  .cert .cert-name{font-family:'Alexandria', sans-serif; font-size:26px; margin-bottom:12px; font-weight:800;}
+  .cert .cert-line{font-size:13px; color:#6b6350; margin-bottom:28px;}
+  .cert .mini-seal{
+    width:60px;height:60px;border-radius:50%; margin:0 auto;
+    background:radial-gradient(circle at 32% 28%, #b5323f 0%, var(--wax) 45%, var(--wax-dark) 100%);
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.15), 0 4px 15px rgba(158,42,59,0.3);
+  }
+
+  .testimonials-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:28px;
+  }
+  .testimonial-card{
+    background:var(--ink-soft);
+    border:1.5px solid var(--line);
+    border-radius:6px;
+    padding:40px 32px;
+    position:relative;
+    transition:transform .3s ease, border-color .3s ease;
+  }
+  .testimonial-card:hover{
+    transform:translateY(-6px);
+    border-color:var(--brass);
+  }
+  .testimonial-card .quote-mark{
+    font-size:60px;
+    color:var(--brass);
+    opacity:0.2;
+    line-height:1;
+    margin-bottom:-20px;
+    font-family:'Alexandria', sans-serif;
+  }
+  .testimonial-card p{
+    font-size:15px;
+    color:var(--parchment-dim);
+    line-height:1.9;
+    margin-bottom:24px;
+    font-style:italic;
+  }
+  .testimonial-author{
+    display:flex;
+    align-items:center;
+    gap:14px;
+  }
+  .testimonial-author .avatar{
+    width:48px; height:48px; border-radius:50%;
+    background:linear-gradient(135deg, var(--brass-light), var(--brass));
+    display:flex; align-items:center; justify-content:center;
+    font-size:20px;
+    font-weight:700;
+    color:var(--ink);
+  }
+  .testimonial-author .name{
+    font-weight:700;
+    color:var(--parchment);
+    font-size:15px;
+  }
+  .testimonial-author .title{
+    font-size:13px;
+    color:var(--parchment-muted);
+  }
+  .testimonial-video{
+    margin-top:16px;
+    padding:12px 16px;
+    background:rgba(201,160,78,0.05);
+    border:1px solid var(--line);
+    border-radius:8px;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-size:13px;
+    color:var(--brass-light);
+    cursor:pointer;
+    transition:all 0.3s ease;
+  }
+  .testimonial-video:hover{
+    background:rgba(201,160,78,0.1);
+    border-color:var(--brass-light);
+  }
+
+  .faq-item{border-bottom:1.5px solid var(--line);}
+  .faq-q{
+    width:100%; text-align:right; background:none; border:none; color:var(--parchment);
+    font-family:'Cairo',sans-serif; font-size:18px; font-weight:500;
+    padding:28px 4px; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:20px;
+    transition:color .3s ease;
+  }
+  .faq-q:hover{color:var(--brass-light);}
+  .faq-q .plus{font-size:24px; color:var(--brass); transition:transform .3s ease; flex-shrink:0; font-weight:300;}
+  .faq-item.open .plus{transform:rotate(45deg);}
+  .faq-a{max-height:0; overflow:hidden; transition:max-height .4s ease;}
+  .faq-a p{padding:0 4px 28px; color:var(--parchment-dim); font-size:16px; max-width:700px; line-height:1.9;}
+
+  .referral-section{
+    background:linear-gradient(135deg, rgba(0,108,53,0.1), rgba(201,160,78,0.05));
+    border:1.5px solid rgba(0,108,53,0.2);
+    border-radius:6px;
+    padding:56px 48px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .referral-section::before{
+    content:"";
+    position:absolute; top:0; right:0; left:0; height:3px;
+    background:linear-gradient(90deg, var(--wax), var(--brass), var(--saudi-green));
+  }
+  .referral-section h2{
+    font-size:clamp(28px, 3.5vw, 38px);
+    color:var(--parchment);
+    margin-bottom:16px;
+  }
+  .referral-section p{
+    color:var(--parchment-dim);
+    font-size:17px;
+    max-width:600px;
+    margin:0 auto 32px;
+    line-height:1.9;
+  }
+  .referral-code{
+    display:inline-flex;
+    align-items:center;
+    gap:16px;
+    background:var(--ink);
+    border:1.5px solid var(--brass);
+    border-radius:8px;
+    padding:16px 24px;
+    font-size:18px;
+    font-weight:700;
+    color:var(--brass-light);
+    font-family:'Alexandria', sans-serif;
+  }
+  .referral-code button{
+    background:var(--brass);
+    color:var(--ink);
+    border:none;
+    padding:8px 16px;
+    border-radius:4px;
+    font-size:13px;
+    font-weight:700;
+    cursor:pointer;
+    transition:all 0.2s ease;
+  }
+  .referral-code button:hover{
+    background:var(--brass-light);
+    transform:translateY(-2px);
+  }
+
+  .contact-section{
+    text-align:center;
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(158,42,59,0.15), transparent 60%),
+      radial-gradient(ellipse at 80% 100%, rgba(0,108,53,0.08), transparent 50%),
+      var(--ink-soft);
+    border-radius:6px;
+    padding:100px 48px;
+    border:1.5px solid var(--line);
+    position:relative;
+    overflow:hidden;
+  }
+  .contact-section::before{
+    content:"";
+    position:absolute; top:0; right:0; left:0; height:3px;
+    background:linear-gradient(90deg, var(--wax), var(--brass), var(--saudi-green));
+  }
+  .contact-section h2{font-size:clamp(34px,5vw,52px); color:var(--parchment); margin-bottom:20px; line-height:1.2;}
+  .contact-section > p{color:var(--parchment-dim); font-size:18px; max-width:540px; margin:0 auto 48px; line-height:1.8;}
+  .contact-form{
+    max-width:620px;
+    margin:0 auto 48px;
+    text-align:right;
+    position:relative; z-index:1;
+  }
+  .form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+    margin-bottom:18px;
+  }
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea{
+    width:100%;
+    padding:16px 18px;
+    background:var(--ink);
+    border:1.5px solid var(--line);
+    border-radius:4px;
+    color:var(--parchment);
+    font-family:'Cairo', sans-serif;
+    font-size:15px;
+    outline:none;
+    transition:border-color .2s, box-shadow .2s;
+  }
+  .contact-form input:focus,
+  .contact-form select:focus,
+  .contact-form textarea:focus{
+    border-color:var(--brass-light);
+    box-shadow:0 0 0 3px rgba(201,160,78,0.1);
+  }
+  .contact-form textarea{
+    min-height:140px;
+    resize:vertical;
+    margin-bottom:18px;
+  }
+  .contact-form .btn{
+    width:100%;
+    justify-content:center;
+    font-size:16px;
+    padding:18px;
+  }
+  .contact-methods{display:flex; gap:18px; justify-content:center; flex-wrap:wrap;}
+
+  footer{
+    padding:60px 0; border-top:1.5px solid var(--line); text-align:center;
+    color:var(--parchment-muted); font-size:14px;
+    background:var(--ink);
+  }
+  footer .logo{justify-content:center; margin-bottom:20px; font-size:24px;}
+  footer .footer-links{
+    display:flex; justify-content:center; gap:32px;
+    margin-bottom:24px;
+    flex-wrap:wrap;
+  }
+  footer .footer-links a{
+    color:var(--parchment-muted);
+    transition:color .2s;
+    font-size:14px;
+  }
+  footer .footer-links a:hover{color:var(--brass-light);}
+  footer .saudi-footer{
+    display:inline-flex; align-items:center; gap:8px;
+    margin-top:16px;
+    padding:8px 20px;
+    background:rgba(0,108,53,0.08);
+    border:1px solid rgba(0,108,53,0.2);
+    border-radius:24px;
+    font-size:13px;
+  }
+
+  @keyframes fadeInUp{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+
+  @media (max-width: 1024px){
+    .testimonials-grid{grid-template-columns:1fr;}
+    .saudi-team-banner{grid-template-columns:1fr;}
+    .saudi-team-stats{grid-template-columns:repeat(2, 1fr);}
+    .stories-grid{grid-template-columns:1fr;}
+    .comparison-table{font-size:13px;}
+    .comparison-table th, .comparison-table td{padding:12px 14px;}
+  }
+  @media (max-width: 900px){
+    .stats-grid{grid-template-columns:repeat(2, 1fr); gap:20px;}
+    .team-grid{grid-template-columns:1fr;}
+    .calc-row{grid-template-columns:1fr;}
+    .form-row{grid-template-columns:1fr;}
+    .rights{grid-template-columns:1fr; padding:40px 28px;}
+    .samples-grid{grid-template-columns:1fr;}
+    .steps{grid-template-columns:1fr 1fr; gap:30px;}
+    .packages{grid-template-columns:1fr;}
+    .testimonials-grid{grid-template-columns:1fr;}
+    .saudi-team-banner{grid-template-columns:1fr;}
+    .stories-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width: 880px){
+    nav ul{display:none;}
+    .nav-cta-desktop{display:none;}
+    .nav-toggle{display:flex;}
+    .mobile-menu{display:flex;}
+    .hero-grid{grid-template-columns:1fr;}
+    .seal-wrap{order:-1; margin-bottom:30px;}
+    .seal{width:220px;height:220px;}
+    .seal-text strong{font-size:22px;}
+    .seal-wrap .ring-orbit{width:280px;height:280px;}
+    .seal-wrap .ring-orbit-2{display:none;}
+    .why-grid{grid-template-columns:1fr;}
+    .process{padding:48px 28px;}
+    .steps{grid-template-columns:1fr; gap:30px;}
+    .packages{grid-template-columns:1fr;}
+    .samples-preview{padding:40px 28px;}
+    section{padding:80px 0;}
+    .hero{padding-top:110px; min-height:auto; padding-bottom:70px;}
+    nav{padding:14px 22px;}
+    body::before{display:none;}
+    header{-webkit-backdrop-filter:none; backdrop-filter:none; background:rgba(15,15,20,0.97);}
+    .stats-bar{padding:36px 0;}
+    .contact-section{padding:70px 28px;}
+    .comparison-section{padding:48px 28px; overflow-x:auto;}
+    .comparison-table{min-width:600px;}
+    .success-stories{padding:48px 28px;}
+    .referral-section{padding:48px 28px;}
+  }
+  @media (max-width:520px){
+    .steps{grid-template-columns:1fr;}
+    .samples-grid{grid-template-columns:1fr;}
+    .cta-row{flex-direction:column;}
+    .btn{justify-content:center; width:100%;}
+    .hero{padding-top:100px;}
+    .hero h1{font-size:clamp(32px,9vw,42px);}
+    .seal{width:180px;height:180px;}
+    .seal-wrap .ring-orbit{width:240px;height:240px;}
+    .stats-grid{grid-template-columns:1fr 1fr;}
+    .contact-section{padding:60px 20px;}
+    .saudi-team-stats{grid-template-columns:1fr;}
+    .referral-code{flex-direction:column; gap:12px;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.01ms !important; transition-duration:.01ms !important;}
+  }
+</style>
+</head>
+<body>
+
+<div class="scroll-progress" id="scroll-progress"></div>
+
+<div class="urgency-bar" id="urgency-bar">
+  <button class="close-urgency" onclick="document.getElementById('urgency-bar').classList.remove('show')">×</button>
+  <strong>🔥 عرض محدود:</strong> خصم 15% على الباقة الاحترافية + فصل تجريبي مجاني — <strong>3 مقاعد فقط هذا الشهر</strong>
+</div>
+
+<a href="#main" class="skip-link">تخطَّ إلى المحتوى</a>
+
+<header id="main-header">
+  <nav aria-label="التنقل الرئيسي">
+    <a href="#main" class="logo"><span class="seal-mini"></span> كتابك الأول</a>
+    <ul>
+      <li><a href="#why">لماذا نحن</a></li>
+      <li><a href="#team">فريقنا</a></li>
+      <li><a href="#process">كيف نعمل</a></li>
+      <li><a href="#testimonials">آراء العملاء</a></li>
+      <li><a href="#calculator">التسعير</a></li>
+      <li><a href="#packages">الباقات</a></li>
+      <li><a href="#samples">نماذج أعمالنا</a></li>
+      <li><a href="#success-stories">قصص النجاح</a></li>
+      <li><a href="#comparison">لماذا نحن</a></li>
+      <li><a href="#rights">الحقوق الحصرية</a></li>
+      <li><a href="#faq">الأسئلة الشائعة</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta nav-cta-desktop"><span>ابدأ كتابك</span></a>
+    <button class="nav-toggle" aria-label="فتح القائمة" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu">
+    <a href="#why">لماذا نحن</a>
+    <a href="#team">فريقنا</a>
+    <a href="#process">كيف نعمل</a>
+    <a href="#testimonials">آراء العملاء</a>
+    <a href="#calculator">التسعير</a>
+    <a href="#packages">الباقات</a>
+    <a href="#samples">نماذج أعمالنا</a>
+    <a href="#success-stories">قصص النجاح</a>
+    <a href="#comparison">لماذا نحن</a>
+    <a href="#rights">الحقوق الحصرية</a>
+    <a href="#faq">الأسئلة الشائعة</a>
+    <a href="#contact" class="nav-cta">ابدأ كتابك</a>
+  </div>
+</header>
+
+<section class="hero" id="main">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">تأليف وتصميم كتب شخصية حسب الطلب</div>
+      <h1>فكرتك تستحق أن تصبح <em>كتابًا</em> يحمل اسمك فقط</h1>
+      <p class="lead">فريق متخصص من الباحثين والخبراء يحوّل خبرتك أو قصتك إلى كتاب كامل، من أول جلسة نقاش حتى ملف جاهز للطباعة، دون أن تكتب حرفًا واحدًا إن لم ترغب.</p>
+      <div class="cta-row">
+        <a href="#contact" class="btn btn-primary">احجز استشارتك المجانية</a>
+        <a href="#process" class="btn btn-ghost">كيف تسير العملية؟</a>
+      </div>
+      <div class="trust-bar">
+        <span>استشارة أولى بلا التزام</span>
+        <span>حقوق حصرية بعقد قانوني</span>
+        <span>رد خلال ساعات العمل</span>
+      </div>
+      <div class="guarantee-badge">
+        <div class="icon">🛡️</div>
+        <div>
+          <strong>ضمان استرداد 100%</strong>
+          إذا لم تكن راضياً عن الفصل التجريبي، لا تدفع شيئاً
+        </div>
+      </div>
+    </div>
+    <div class="seal-wrap">
+      <div class="ring-orbit"></div>
+      <div class="ring-orbit-2"></div>
+      <div class="seal">
+        <div class="seal-text"><strong>ملكية حصرية</strong>موثّقة باسمك</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="wrap">
+    <div class="stats-grid reveal">
+      <div class="stat-item">
+        <div class="stat-num" data-target="15">0</div>
+        <div class="stat-label">كتاب منجز</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-target="10">0</div>
+        <div class="stat-label">مجالات تخصص</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-target="18">0</div>
+        <div class="stat-label">باحث وخبير</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-target="100">0</div>
+        <div class="stat-label">% رضا العملاء</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="topics-strip">
+  <div class="wrap">
+    <span class="topics-label">نكتب في:</span>
+    <div class="topics-track">
+      <span>السيرة الذاتية</span><span>الكتب التنموية</span><span>قصص الأطفال</span>
+      <span>المذكرات العائلية</span><span>الكتب الدينية</span><span>المحتوى المؤسسي</span>
+      <span>الروايات القصيرة</span><span>كتب الأعمال والريادة</span>
+      <span>الكتب الأكاديمية</span><span>الكتب التاريخية</span>
+    </div>
+  </div>
+</div>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<section id="why">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">لماذا كتابك الأول</div>
+      <h2>لست بحاجة لتكون كاتبًا لتملك كتابًا</h2>
+      <p>نحوّل فكرتك أو خبرتك إلى كتاب مكتمل، جاهز باسمك، دون أن تكتب سطرًا واحدًا إن أردت. فريقنا من الخبراء والباحثين يضمن لك جودة عالمية بأسلوب عربي أصيل.</p>
+    </div>
+    <div class="why-grid reveal">
+      <div class="why-card">
+        <span class="num">أولًا</span>
+        <h3>أي موضوع تختاره</h3>
+        <p>سيرة ذاتية، كتاب تنموي، قصة أطفال، مذكرات عائلية، أو محتوى متخصص في مجالك — نكتبه بأسلوب يناسب هدفك وجمهورك، بدقة علمية واحترافية.</p>
+      </div>
+      <div class="why-card">
+        <span class="num">ثانيًا</span>
+        <h3>حقوق حصرية كاملة</h3>
+        <p>بعد التسليم، النص والتصميم يصبحان ملكك وحدك، بموجب عقد قانوني مكتوب — لا نعيد استخدامهما ولا نبيعهما لأي طرف آخر. ملكيتك الكاملة مضمونة.</p>
+      </div>
+      <div class="why-card">
+        <span class="num">ثالثًا</span>
+        <h3>جاهز للطباعة أو النشر</h3>
+        <p>تصميم غلاف وتنسيق داخلي احترافي، بملفات مطابقة لمعايير دور النشر والطباعة المحلية والعالمية، أو للنشر الرقمي مباشرة.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="team">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">فريقنا</div>
+      <h2>باحثون وخبراء يعملون على مشروعك</h2>
+      <p>فريق متخصص من الباحثين والخبراء: باحثون يضمنون دقة المعلومات، كتّاب يصيغون الأسلوب، محررون يراجعون النص، ومصممون يُخرجون الكتاب بأبهى حلة.</p>
+    </div>
+    <div class="team-grid reveal">
+      <div class="team-card">
+        <div class="team-icon">🔬</div>
+        <h3>الباحثون المتخصصون</h3>
+        <p>يتعمقون في موضوع كتابك، يجمعون المعلومات الموثوقة من مصادرها الأصلية، ويضمنون دقة المحتوى العلمي والتاريخي والثقافي.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-icon">✍️</div>
+        <h3>الكتّاب والمحررون</h3>
+        <p>يحولون الأفكار إلى نص سلس يحافظ على صوتك وشخصيتك، مع مراجعة لغوية دقيقة على مستوى النشر، بلغة عربية فصيحة وأسلوب جذاب.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-icon">🎨</div>
+        <h3>المصممون المحترفون</h3>
+        <p>يصممون الغلاف والتنسيق الداخلي بمعايير دور النشر العالمية، ليكون كتابك جاهزًا للطباعة فورًا بجودة احترافية.</p>
+      </div>
+    </div>
+
+    <div class="saudi-team-banner reveal">
+      <div>
+        <h3>خبرة محلية ومعايير عالمية</h3>
+        <p>نحن فريق متخصص يفهم ثقافتك وقيمك ولهجتك. نجمع بين العمق المحلي والمعايير العالمية في الكتابة والتصميم. كل عضو في فريقنا يحمل خبرة في مجاله، ونحن نستثمر في تطوير كوادرنا باستمرار.</p>
+      </div>
+      <div class="saudi-team-stats">
+        <div class="saudi-stat">
+          <div class="num">18</div>
+          <div class="label">باحث وخبير</div>
+        </div>
+        <div class="saudi-stat">
+          <div class="num">5+</div>
+          <div class="label">سنوات خبرة</div>
+        </div>
+        <div class="saudi-stat">
+          <div class="num">8</div>
+          <div class="label">تخصصات علمية</div>
+        </div>
+        <div class="saudi-stat">
+          <div class="num">50+</div>
+          <div class="label">مشروع منجز</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <div class="process reveal">
+      <div class="section-head">
+        <div class="eyebrow">كيف نعمل</div>
+        <h2>من الفكرة إلى الكتاب المكتمل، في أربع خطوات</h2>
+        <p>عملية منظمة وشفافة، يشرف عليها فريقنا المتخصص خطوة بخطوة.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-connector"></div>
+          <span class="step-num">01 — الفكرة</span>
+          <h3>نتحدث عن كتابك</h3>
+          <p>مكالمة قصيرة أو نموذج تعبّئه، نفهم من خلاله الموضوع والهدف والجمهور المستهدف. نبدأ بتحديد الرؤية معك.</p>
+        </div>
+        <div class="step">
+          <div class="step-connector"></div>
+          <span class="step-num">02 — الكتابة</span>
+          <h3>نكتب المخطط والفصول</h3>
+          <p>نرسل لك مسودة أولى، ونراجعها معك خطوة بخطوة حتى تعكس صوتك وفكرتك بدقة. تعديلات غير محدودة حتى رضاك.</p>
+        </div>
+        <div class="step">
+          <div class="step-connector"></div>
+          <span class="step-num">03 — التصميم</span>
+          <h3>نصمم الكتاب كاملًا</h3>
+          <p>غلاف مميز وتنسيق داخلي احترافي، بصيغ جاهزة للطباعة أو النشر الرقمي. تصميم يعكس هوية كتابك.</p>
+        </div>
+        <div class="step">
+          <div class="step-connector"></div>
+          <span class="step-num">04 — التسليم</span>
+          <h3>كتابك بين يديك</h3>
+          <p>تستلم الملفات النهائية مع عقد انتقال الحقوق الحصرية الموقّع باسمك. كتابك جاهز للنشر فورًا.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="comparison">
+  <div class="wrap">
+    <div class="section-head reveal" style="text-align:center; margin-inline:auto;">
+      <div class="eyebrow" style="justify-content:center;">لماذا نحن</div>
+      <h2>نحن لسنا مجرد كتّاب... نحن شريكك في الإرث</h2>
+      <p>قارن بين خدمتنا والبدائل المتاحة، وسترى الفرق واضحاً في الجودة والثقة والقيمة.</p>
+    </div>
+    <div class="comparison-section reveal">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th style="width:25%">الميزة</th>
+            <th style="width:25%">كاتب مستقل</th>
+            <th style="width:25%">الذكاء الاصطناعي</th>
+            <th style="width:25%" class="highlight">كتابك الأول</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>جودة المحتوى</strong></td>
+            <td class="cross">✗ غير مضمونة</td>
+            <td class="cross">✗ متوسطة (أخطاء)</td>
+            <td class="highlight check">✓ مضمونة 100%</td>
+          </tr>
+          <tr>
+            <td><strong>البحث العلمي</strong></td>
+            <td class="cross">✗ غير متاح</td>
+            <td class="cross">✗ غير دقيق</td>
+            <td class="highlight check">✓ باحثون متخصصون</td>
+          </tr>
+          <tr>
+            <td><strong>المراجعة اللغوية</strong></td>
+            <td class="cross">✗ غير متاح</td>
+            <td class="cross">✗ غير متاح</td>
+            <td class="highlight check">✓ محررون لغويون</td>
+          </tr>
+          <tr>
+            <td><strong>التصميم الاحترافي</strong></td>
+            <td class="cross">✗ غير متاح</td>
+            <td class="cross">✗ غير متاح</td>
+            <td class="highlight check">✓ مصممون محترفون</td>
+          </tr>
+          <tr>
+            <td><strong>عقد انتقال الحقوق</strong></td>
+            <td class="cross">✗ غير متاح</td>
+            <td class="cross">✗ غير متاح</td>
+            <td class="highlight check">✓ قانوني موقّع</td>
+          </tr>
+          <tr>
+            <td><strong>ضمان الاسترداد</strong></td>
+            <td class="cross">✗ غير متاح</td>
+            <td class="cross">✗ غير متاح</td>
+            <td class="highlight check">✓ 100% إذا لم ترضَ</td>
+          </tr>
+          <tr>
+            <td><strong>فصل تجريبي مجاني</strong></td>
+            <td class="cross">✗ غير متاح</td>
+            <td class="cross">✗ غير متاح</td>
+            <td class="highlight check">✓ 1,000 كلمة</td>
+          </tr>
+          <tr>
+            <td><strong>فريق سعودي متخصص</strong></td>
+            <td class="cross">✗ غير مضمون</td>
+            <td class="cross">✗ غير متاح</td>
+            <td class="highlight check">✓ 18 باحث وخبير</td>
+          </tr>
+          <tr>
+            <td><strong>السعر</strong></td>
+            <td>0.03-0.10$/كلمة</td>
+            <td>مجاني-$20/شهر</td>
+            <td class="highlight">يبدأ من 2,500 ريال</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">آراء عملائنا</div>
+      <h2>ما يقوله عملاؤنا عن تجربتهم</h2>
+      <p>ثقة عملائنا هي شعارنا. إليك بعض آراء من تعاملوا معنا.</p>
+    </div>
+    <div class="testimonials-grid reveal">
+      <div class="testimonial-card">
+        <div class="quote-mark">"</div>
+        <p>تعاملت مع فريق كتابك الأول لكتابة سيرتي الذاتية، وكانت التجربة استثنائية. الفريق فهم رؤيتي بعمق وأخرج كتابًا يفوق توقعاتي.</p>
+        <div class="testimonial-author">
+          <div class="avatar">ع</div>
+          <div>
+            <div class="name">عبدالرحمن العتيبي</div>
+            <div class="title">رائد أعمال — الرياض</div>
+          </div>
+        </div>
+        <div class="testimonial-video" onclick="alert('سيتوفر الفيديو قريباً')">
+          ▶️ شاهد شهادته
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="quote-mark">"</div>
+        <p>كنت أبحث عن فريق محلي يفهم ثقافتنا وقيمنا، ووجدت في كتابك الأول ما كنت أتمناه. كتاب التنمية الذي أنتجوه لي حصل على إعجاب الجميع.</p>
+        <div class="testimonial-author">
+          <div class="avatar">ف</div>
+          <div>
+            <div class="name">فاطمة الزهراني</div>
+            <div class="title">مدربة تنموية — جدة</div>
+          </div>
+        </div>
+        <div class="testimonial-video" onclick="alert('سيتوفر الفيديو قريباً')">
+          ▶️ شاهد شهادتها
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="quote-mark">"</div>
+        <p>الاحترافية والالتزام بالمواعيد والجودة العالية — هذا ما يميز فريق كتابك الأول. أوصي بهم بشدة لكل من يريد كتابًا احترافيًا.</p>
+        <div class="testimonial-author">
+          <div class="avatar">س</div>
+          <div>
+            <div class="name">سلطان القحطاني</div>
+            <div class="title">أكاديمي — الدمام</div>
+          </div>
+        </div>
+        <div class="testimonial-video" onclick="alert('سيتوفر الفيديو قريباً')">
+          ▶️ شاهد شهادته
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="calculator">
+  <div class="wrap">
+    <div class="section-head reveal" style="text-align:center; margin-inline:auto;">
+      <div class="eyebrow" style="justify-content:center;">حاسبة التسعير</div>
+      <h2>احسب تكلفة كتابك التقريبية</h2>
+      <p>اختر نوع الكتاب وعدد الكلمات المُقدر، واحصل على تقدير فوري.</p>
+    </div>
+    <div class="calculator reveal">
+      <div class="calc-row">
+        <div class="calc-field">
+          <label for="book-type">نوع الكتاب</label>
+          <select id="book-type">
+            <option value="basic">كتاب تنموي / أعمال</option>
+            <option value="story">سيرة ذاتية / مذكرات</option>
+            <option value="children">قصص أطفال</option>
+            <option value="research">بحثي / أكاديمي</option>
+            <option value="religious">كتب دينية</option>
+          </select>
+        </div>
+        <div class="calc-field">
+          <label for="word-count">عدد الكلمات المُقدر</label>
+          <select id="word-count">
+            <option value="10000">10,000 كلمة</option>
+            <option value="15000" selected>15,000 كلمة</option>
+            <option value="20000">20,000 كلمة</option>
+            <option value="25000">25,000 كلمة</option>
+            <option value="30000">30,000 كلمة</option>
+            <option value="40000">40,000 كلمة</option>
+            <option value="50000">50,000 كلمة</option>
+          </select>
+        </div>
+      </div>
+      <div class="calc-row">
+        <div class="calc-field">
+          <label for="design-package">الباقة</label>
+          <select id="design-package">
+            <option value="text-only">الأساسية (نص فقط)</option>
+            <option value="full-design" selected>الاحترافية (نص + تصميم)</option>
+            <option value="print">الفاخرة (نص + تصميم + طباعة)</option>
+          </select>
+        </div>
+        <div class="calc-field">
+          <label for="urgency">السرعة</label>
+          <select id="urgency">
+            <option value="normal">عادي (4–6 أسابيع)</option>
+            <option value="fast">سريع (2–3 أسابيع) +20%</option>
+            <option value="urgent">عاجل (1–2 أسابيع) +40%</option>
+          </select>
+        </div>
+      </div>
+      <div class="calc-result">
+        <div class="result-label">التقدير التقريبي</div>
+        <div class="result-price" id="calc-price">3,200 ريال</div>
+        <div class="result-note">السعر النهائي يُحدد بعد مراجعة تفاصيل المشروع</div>
+      </div>
+      <div class="installment-note">
+        <strong>💳 الدفع بالتقسيط متاح</strong>
+        30% عند الاتفاق + 40% عند تسليم المسودة + 30% عند التسليم النهائي
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="packages">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">الباقات</div>
+      <h2>اختر ما يناسب مشروعك</h2>
+      <p>ثلاث باقات مرنة حسب حجم الكتاب واحتياجك، مع إمكانية التخصيص الكامل بعد التواصل.</p>
+    </div>
+    <div class="packages reveal">
+      <div class="pkg">
+        <h3>الأساسية</h3>
+        <p class="desc">لمن يريد نصًا جاهزًا فقط، ويتولى التصميم بنفسه.</p>
+        <p class="price">تبدأ من 2,500 ريال <span style="font-family:'Cairo',sans-serif; font-size:13px; color:#9a9280;">(حتى 15,000 كلمة)</span></p>
+        <div class="installment">💳 تقسيط: 750 + 1,000 + 750 ريال</div>
+        <ul>
+          <li>كتابة كامل نص الكتاب</li>
+          <li>مراجعة لغوية ومنهجية</li>
+          <li>مسودتان للمراجعة والتعديل</li>
+          <li>تسليم ملف Word / PDF</li>
+          <li>فصل تجريبي مجاني (1,000 كلمة)</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost">اطلب هذه الباقة</a>
+      </div>
+      <div class="pkg featured">
+        <span class="tag">الأكثر طلبًا</span>
+        <h3>الاحترافية</h3>
+        <p class="desc">كتاب كامل، مكتوب ومصمم، جاهز للنشر مباشرة.</p>
+        <p class="price">تبدأ من 4,500 ريال <span style="font-family:'Cairo',sans-serif; font-size:13px; color:#9a9280;">(حتى 25,000 كلمة)</span></p>
+        <div class="installment">💳 تقسيط: 1,350 + 1,800 + 1,350 ريال</div>
+        <ul>
+          <li>كل ما في الباقة الأساسية</li>
+          <li>تصميم غلاف احترافي</li>
+          <li>تنسيق داخلي كامل للصفحات</li>
+          <li>نسخة PDF جاهزة للطباعة والنشر الرقمي</li>
+          <li>عقد انتقال حقوق حصرية</li>
+          <li>ضمان استرداد 100%</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary">اطلب هذه الباقة</a>
+      </div>
+      <div class="pkg">
+        <h3>الفاخرة</h3>
+        <p class="desc">تجربة متكاملة تصل إلى نسخة مطبوعة بين يديك.</p>
+        <p class="price">تبدأ من 7,500 ريال <span style="font-family:'Cairo',sans-serif; font-size:13px; color:#9a9280;">(حسب النسخة المطبوعة)</span></p>
+        <div class="installment">💳 تقسيط: 2,250 + 3,000 + 2,250 ريال</div>
+        <ul>
+          <li>كل ما في الباقة الاحترافية</li>
+          <li>10 نسخ مطبوعة بجودة عالية</li>
+          <li>استشارة نشر وتوزيع</li>
+          <li>جولات تعديل إضافية</li>
+          <li>صفحة ترويجية احترافية للكتاب</li>
+          <li>تسويق على وسائل التواصل</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost">اطلب هذه الباقة</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="samples">
+  <div class="wrap">
+    <div class="samples-preview reveal">
+      <div class="section-head" style="margin-bottom:0;">
+        <div class="eyebrow">نماذج أعمالنا</div>
+        <h2>لمسة من أسلوبنا في الكتابة</h2>
+        <p>نماذج توضيحية لأسلوبنا وتنسيقنا في كل نوع من الكتب التي نعمل عليها، لتتخيل شكل كتابك قبل أن نبدأ.</p>
+      </div>
+      <div class="samples-grid">
+        <div class="sample-card">
+          <div class="sc-mark"></div>
+          <h3>السيرة الذاتية</h3>
+          <p>أسلوب سردي شخصي يحوّل محطات حياتك إلى قصة متماسكة تستحق أن تُروى.</p>
+        </div>
+        <div class="sample-card">
+          <div class="sc-mark"></div>
+          <h3>الكتب التنموية</h3>
+          <p>محتوى عملي منظّم بخطوات واضحة، يوصل فكرتك أو خبرتك بأسلوب مباشر ومؤثر.</p>
+        </div>
+        <div class="sample-card">
+          <div class="sc-mark"></div>
+          <h3>قصص الأطفال</h3>
+          <p>لغة بسيطة ودافئة، وإيقاع سردي يناسب عمر القارئ الصغير ويحمل رسالة هادفة.</p>
+        </div>
+        <div class="sample-card">
+          <div class="sc-mark"></div>
+          <h3>المذكرات العائلية</h3>
+          <p>توثيق لذكريات العائلة وحكاياتها بأسلوب دافئ يليق بأن يورَّث للأجيال القادمة.</p>
+        </div>
+        <div class="sample-card">
+          <div class="sc-mark"></div>
+          <h3>الكتب الدينية</h3>
+          <p>صياغة دقيقة وموثّقة، تراعي حساسية الموضوع وتقدَّم بأسلوب واضح ومحترم.</p>
+        </div>
+        <div class="sample-card">
+          <div class="sc-mark"></div>
+          <h3>كتب الأعمال والريادة</h3>
+          <p>محتوى احترافي يبرز خبرتك ورؤيتك التجارية بأسلوب مقنع وموثوق.</p>
+        </div>
+      </div>
+      <div class="samples-cta" style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+        <a href="samples.html" class="btn btn-primary">شاهد الكتب المنجزة بالكامل</a>
+        <a href="index.html#contact" class="btn btn-ghost">اطلب استشارتك المجانية</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="success-stories">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">قصص النجاح</div>
+      <h2>من الفكرة إلى الكتاب المكتمل</h2>
+      <p>شاهد كيف حوّلنا أفكار عملائنا إلى كتب حقيقية يفتخرون بها.</p>
+    </div>
+    <div class="stories-grid reveal">
+      <div class="story-card">
+        <div class="story-image">📖</div>
+        <div class="story-content">
+          <span class="story-tag">مذكرات شخصية</span>
+          <h3>من خلف الزحام</h3>
+          <p>مشاهدات ويوميات من المسجد الحرام، مكتوبة بصوت من عاش التفاصيل عن قرب.</p>
+          <div class="story-meta">
+            <span>📄 18,000 كلمة</span>
+            <span>⏱️ 5 أسابيع</span>
+          </div>
+        </div>
+      </div>
+      <div class="story-card">
+        <div class="story-image">📚</div>
+        <div class="story-content">
+          <span class="story-tag">تحليل وسياسة</span>
+          <h3>من أين تأتي قوة الأمم؟</h3>
+          <p>قراءة في مفهوم القوة في السياسة المعاصرة، وكيف تُبنى قوة الدول.</p>
+          <div class="story-meta">
+            <span>📄 22,000 كلمة</span>
+            <span>⏱️ 6 أسابيع</span>
+          </div>
+        </div>
+      </div>
+      <div class="story-card">
+        <div class="story-image">📕</div>
+        <div class="story-content">
+          <span class="story-tag">سيرة ذاتية</span>
+          <h3>السقوط</h3>
+          <p>قصة حياة مكتوبة بصدق وقرب من التفاصيل، توثّق لحظة مفصلية وتحوّلها.</p>
+          <div class="story-meta">
+            <span>📄 15,000 كلمة</span>
+            <span>⏱️ 4 أسابيع</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="samples-cta" style="margin-top:48px; text-align:center;">
+      <a href="samples.html" class="btn btn-primary">شاهد جميع قصص النجاح</a>
+    </div>
+  </div>
+</section>
+
+<section id="rights">
+  <div class="wrap">
+    <div class="rights reveal">
+      <div>
+        <div class="eyebrow">الحقوق الحصرية</div>
+        <h2>كتابك يصبح ملكك وحدك، بعقد قانوني</h2>
+        <p>بمجرد التسليم، تنتقل إليك كامل حقوق النص والتصميم بموجب عقد قانوني موقّع بيننا ينص صراحةً على:</p>
+        <ul>
+          <li>انتقال كامل حقوق الملكية الفكرية للنص والتصميم إليك</li>
+          <li>عدم استخدامنا للمحتوى لأي عميل آخر أو لأغراضنا</li>
+          <li>عدم نشر أو بيع المحتوى تحت أي اسم آخر</li>
+          <li>حقك الكامل في النشر والتوزيع والترجمة دون قيود</li>
+        </ul>
+      </div>
+      <div class="cert">
+        <h4>عقد انتقال حقوق</h4>
+        <div class="mini-seal"></div>
+        <p class="cert-name" style="margin-top:20px;">كِتابُك</p>
+        <p class="cert-line">جميع الحقوق محفوظة لصاحب الطلب — عقد قانوني موقّع</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">الأسئلة الشائعة</div>
+      <h2>أسئلة قد تدور في ذهنك</h2>
+    </div>
+    <div class="reveal" style="max-width:800px;">
+      <div class="faq-item">
+        <button class="faq-q">هل يمكنني اختيار أي موضوع لكتابي؟<span class="plus">+</span></button>
+        <div class="faq-a"><p>نعم، طالما المحتوى لا يخالف الأنظمة أو يحمل طابعًا مسيئًا. نناقش معك مدى ملاءمة الموضوع في مرحلة التواصل الأولى، ويقدم فريقنا استشارته المهنية لضمان نجاح الكتاب.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">كم تستغرق المدة لإنجاز الكتاب؟<span class="plus">+</span></button>
+        <div class="faq-a"><p>تختلف المدة حسب حجم الكتاب ونوع الباقة. كتاب 15,000 كلمة يستغرق 3–4 أسابيع، و25,000 كلمة 5–6 أسابيع. نتفق معك على جدول زمني واضح قبل بدء العمل، ونلتزم به بدقة.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">هل أحصل فعلًا على حقوق حصرية؟<span class="plus">+</span></button>
+        <div class="faq-a"><p>نعم، عبر عقد قانوني مكتوب موقّع بيننا قبل التسليم النهائي، ينص على انتقال كامل الحقوق إليك بشكل نهائي وغير قابل للنقض. ملكيتك الكاملة مضمونة 100%.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">من يقدّم هذه الخدمة؟<span class="plus">+</span></button>
+        <div class="faq-a"><p>يقدّمها فريق متخصص يجمع بين الباحثين والخبراء في مجالات متنوعة، والكتّاب والمحررين اللغويين، والمصممين. فريقنا يفهم ثقافتك وقيمك ولهجتك، ونضمن لك محتوى يعكس هويتك العربية الأصيلة.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">هل يمكنني طلب تعديلات بعد التسليم؟<span class="plus">+</span></button>
+        <div class="faq-a"><p>نعم، كل باقة تتضمن عددًا محددًا من جولات المراجعة والتعديل أثناء الكتابة. بعد التسليم النهائي، يمكن الاتفاق على تعديلات إضافية بسعر رمزي.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">هل تستخدمون الذكاء الاصطناعي في الكتابة؟<span class="plus">+</span></button>
+        <div class="faq-a"><p>نعم، نستعمله كأداة مساعدة لتسريع البحث وتحسين جودة الأسلوب وتقليل الأخطاء اللغوية، لكن المحتوى النهائي يبقى أصليًا وبشريًا 100% — من صياغة ومراجعة فريقنا من الباحثين والكتّاب والمحررين.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">هل يمكنني الحصول على فصل تجريبي مجاني؟<span class="plus">+</span></button>
+        <div class="faq-a"><p>نعم، نقدم فصلًا تجريبيًا مجانيًا (حوالي 1,000 كلمة) بعد الاتفاق على الفكرة والمخطط، لتتأكد من الأسلوب والجودة قبل الالتزام بالمشروع كامل.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">لماذا أختاركم بدلاً من كاتب مستقل أو الذكاء الاصطناعي؟<span class="plus">+</span></button>
+        <div class="faq-a"><p><strong>vs كاتب مستقل:</strong> نقدم فريقاً متخصصاً (بحث + كتابة + تحرير + تصميم) مع عقد قانوني وحقوق حصرية وضمان استرداد.<br><br><strong>vs الذكاء الاصطناعي:</strong> المحتوى بشري 100%، بحث دقيق من مصادر موثوقة، تصميم احترافي، وعقد قانوني. AI لا يستطيع تقديم هذه القيمة.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">هل يمكن الدفع بالتقسيط؟<span class="plus">+</span></button>
+        <div class="faq-a"><p>نعم، نوفر خيار الدفع بالتقسيط: 30% عند الاتفاق، 40% عند تسليم المسودة، و30% عند التسليم النهائي. هذا يقلل الحاجز المالي ويبني الثقة بيننا.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">ما هو ضمان الاسترداد؟<span class="plus">+</span></button>
+        <div class="faq-a"><p>نضمن رضاك 100%. إذا لم تكن راضياً عن الفصل التجريبي المجاني (1,000 كلمة)، لا تدفع شيئاً. وإذا لم تكن راضياً عن المسودة الأولى في الباقة الاحترافية والفاخرة، نعيد الكتابة مجاناً أو نسترد لك 50% من المبلغ.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="referral">
+  <div class="wrap">
+    <div class="referral-section reveal">
+      <h2>أحضر صديقاً واحصل على خصم 20%</h2>
+      <p>إذا كان أحد أصدقائك أو معارفك يفكر في كتابة كتاب، أحضره إلينا واحصل على خصم 20% على مشروعك القادم. كلما زاد عدد الأصدقاء، زاد خصمك!</p>
+      <div class="referral-code">
+        <span>كود الإحالة: <strong>KITAB-20</strong></span>
+        <button onclick="navigator.clipboard.writeText('KITAB-20'); alert('تم نسخ الكود!')">نسخ الكود</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-section reveal">
+      <h2>هل فكرتك جاهزة لتصبح كتابًا؟</h2>
+      <p>أخبرنا عن فكرتك — سنرد عليك بخطوات البدء والتسعير المناسب خلال ساعات العمل. فريقنا جاهز لمساعدتك.</p>
+
+      <div id="form-success" style="display:none; background:rgba(37,211,102,0.1); border:1.5px solid #25D366; border-radius:4px; padding:28px; margin-bottom:28px; text-align:center;">
+        <p style="color:#25D366; font-weight:700; font-size:20px; margin-bottom:10px;">✓ تم إرسال رسالتك بنجاح</p>
+        <p style="color:var(--parchment-dim); font-size:16px;">سنرد عليك خلال ساعات العمل القادمة. شكرًا لتواصلك معنا.</p>
+      </div>
+
+      <div id="form-error" style="display:none; background:rgba(158,42,59,0.15); border:1.5px solid var(--wax); border-radius:4px; padding:24px; margin-bottom:28px; text-align:center;">
+        <p style="color:var(--wax); font-weight:700; font-size:17px; margin-bottom:8px;">⚠ خطأ في الإرسال</p>
+        <p style="color:var(--parchment-dim); font-size:15px;" id="error-text">يرجى التحقق من الإجابة الصحيحة.</p>
+      </div>
+
+      <form 
+        class="contact-form" 
+        action="https://formspree.io/f/xzdnzgng" 
+        method="POST"
+        id="contact-form"
+      >
+        <input type="hidden" name="_replyto" id="replyto-field">
+        <input type="hidden" name="_subject" value="استفسار جديد — كتابك الأول">
+
+        <div style="position:absolute; left:-9999px; opacity:0; height:0; width:0; overflow:hidden;">
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="form-row">
+          <input type="text" name="name" placeholder="الاسم الكامل" required>
+          <input type="email" name="email" placeholder="البريد الإلكتروني" required id="email-field">
+        </div>
+        <div class="form-row">
+          <input type="tel" name="phone" placeholder="رقم الجوال (مع كود الدولة)">
+          <select name="book_type">
+            <option value="">نوع الكتاب المُقدر</option>
+            <option>سيرة ذاتية</option>
+            <option>كتاب تنموي</option>
+            <option>قصص أطفال</option>
+            <option>مذكرات عائلية</option>
+            <option>كتاب ديني</option>
+            <option>أعمال وريادة</option>
+            <option>محتوى مؤسسي</option>
+            <option>آخر</option>
+          </select>
+        </div>
+        <textarea name="message" placeholder="اخبرنا باختصار عن فكرة كتابك، والهدف منه، والجمهور المستهدف..." required></textarea>
+
+        <div class="calc-field" style="margin-bottom:20px;">
+          <label for="math-answer">للتأكد من أنك لست روبوتًا: <span id="math-question" style="color:var(--brass-light); font-weight:700; font-size:16px;"></span></label>
+          <input type="number" id="math-answer" placeholder="أدخل الإجابة" required style="max-width:220px;">
+          <input type="hidden" id="math-correct" name="math_correct">
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="submit-btn">
+          <span id="btn-text">إرسال الاستفسار</span>
+          <span id="btn-loading" style="display:none;">جاري الإرسال...</span>
+        </button>
+      </form>
+
+      <div class="contact-methods">
+        <a href="https://wa.me/966510550739?text=مرحبًا%2C%20أرغب%20بالاستفسار%20عن%20خدمة%20كتابة%20كتابي" target="_blank" rel="noopener" class="btn btn-saudi">تواصل عبر واتساب</a>
+        <a href="mailto:almtfayl028@gmail.com" class="btn btn-ghost">راسلنا عبر البريد</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Chat Widget -->
+<div class="chat-widget" onclick="window.open('https://wa.me/966510550739?text=مرحبًا%2C%20أرغب%20بالاستفسار%20عن%20خدمة%20كتابة%20كتابي', '_blank')">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+  <div class="chat-tooltip">تحدث معنا مباشرة</div>
+</div>
+
+<a href="https://wa.me/966510550739?text=مرحبًا%2C%20أرغب%20بالاستفسار%20عن%20خدمة%20كتابة%20كتابي" target="_blank" rel="noopener" class="float-wa" aria-label="تواصل عبر واتساب">
+  <svg viewBox="0 0 32 32" fill="#fff"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.7 4.61 1.902 6.478L4 29l7.72-1.865A11.94 11.94 0 0 0 16.001 27C22.63 27 28 21.627 28 15S22.63 3 16.001 3zm0 21.818a9.78 9.78 0 0 1-4.99-1.367l-.358-.213-4.583 1.107 1.127-4.47-.234-.367A9.78 9.78 0 0 1 5.909 15c0-5.57 4.523-10.091 10.092-10.091S26.091 9.43 26.091 15 21.57 24.818 16.001 24.818zm5.552-7.55c-.304-.152-1.797-.887-2.076-.988-.279-.101-.482-.152-.685.152-.203.304-.786.988-.964 1.19-.177.203-.355.228-.659.076-.304-.152-1.284-.473-2.446-1.51-.904-.806-1.514-1.802-1.692-2.106-.177-.304-.019-.469.133-.62.137-.136.304-.355.456-.532.152-.177.203-.304.304-.507.101-.203.051-.38-.025-.532-.076-.152-.685-1.651-.939-2.262-.247-.594-.499-.514-.685-.523l-.583-.01c-.203 0-.532.076-.811.38-.279.304-1.065 1.04-1.065 2.538 0 1.498 1.09 2.945 1.242 3.148.152.203 2.146 3.277 5.2 4.596.727.314 1.294.501 1.736.641.729.232 1.393.199 1.918.121.585-.087 1.797-.735 2.05-1.445.253-.71.253-1.318.177-1.445-.076-.127-.279-.203-.583-.355z"/></svg>
+</a>
+
+<footer>
+  <div class="wrap">
+    <div class="logo"><span class="seal-mini"></span> كتابك الأول</div>
+    <div class="footer-links">
+      <a href="#why">لماذا نحن</a>
+      <a href="#team">فريقنا</a>
+      <a href="#process">كيف نعمل</a>
+      <a href="#packages">الباقات</a>
+      <a href="#faq">الأسئلة الشائعة</a>
+      <a href="#contact">تواصل معنا</a>
+    </div>
+    <p>© 2026 كتابك الأول — جميع الحقوق محفوظة لعملائنا في كتبهم.</p>
+    <div class="saudi-footer">
+      <span>🇸🇦</span>
+      <span>فريق سعودي 100% — نخدمك بأصالة وإتقان</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll progress bar
+  window.addEventListener('scroll', () => {
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = scrollTop / scrollHeight;
+    document.getElementById('scroll-progress').style.transform = `scaleX(${scrolled})`;
+  });
+
+  // Header scroll effect
+  const header = document.getElementById('main-header');
+  window.addEventListener('scroll', () => {
+    if(window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+
+  // Urgency bar
+  setTimeout(() => {
+    document.getElementById('urgency-bar').classList.add('show');
+  }, 3000);
+
+  // mobile nav toggle
+  const toggleBtn = document.querySelector('.nav-toggle');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  toggleBtn.addEventListener('click', ()=>{
+    const open = toggleBtn.classList.toggle('open');
+    mobileMenu.classList.toggle('open', open);
+    toggleBtn.setAttribute('aria-expanded', open);
+  });
+  mobileMenu.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click', ()=>{
+      toggleBtn.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      toggleBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.12});
+  revealEls.forEach(el=>io.observe(el));
+
+  // faq accordion
+  document.querySelectorAll('.faq-item').forEach(item=>{
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    q.addEventListener('click', ()=>{
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(o=>{
+        o.classList.remove('open');
+        o.querySelector('.faq-a').style.maxHeight = null;
+      });
+      if(!isOpen){
+        item.classList.add('open');
+        a.style.maxHeight = a.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // animated stats counter
+  const statNums = document.querySelectorAll('.stat-num');
+  const statsObserver = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        const el = entry.target;
+        const target = parseInt(el.dataset.target);
+        const duration = 2000;
+        const start = performance.now();
+        const animate = (now)=>{
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.floor(eased * target) + (target === 100 ? '%' : '+');
+          if(progress < 1) requestAnimationFrame(animate);
+        };
+        requestAnimationFrame(animate);
+        statsObserver.unobserve(el);
+      }
+    });
+  }, {threshold:0.5});
+  statNums.forEach(s=>statsObserver.observe(s));
+
+  // price calculator
+  const calcPrice = ()=>{
+    const type = document.getElementById('book-type').value;
+    const words = parseInt(document.getElementById('word-count').value);
+    const pkg = document.getElementById('design-package').value;
+    const urgency = document.getElementById('urgency').value;
+
+    let pricePerWord = 0.10;
+    if(type === 'children') pricePerWord = 0.12;
+    if(type === 'research') pricePerWord = 0.15;
+    if(type === 'religious') pricePerWord = 0.13;
+    if(type === 'story') pricePerWord = 0.11;
+
+    let basePrice = words * pricePerWord;
+    if(pkg === 'text-only') basePrice *= 0.6;
+    else if(pkg === 'full-design') basePrice *= 1.0;
+    else if(pkg === 'print') basePrice *= 1.5;
+
+    if(urgency === 'fast') basePrice *= 1.2;
+    else if(urgency === 'urgent') basePrice *= 1.4;
+
+    const finalPrice = Math.ceil(basePrice / 100) * 100;
+    document.getElementById('calc-price').textContent = finalPrice.toLocaleString('ar-SA') + ' ريال';
+  };
+  document.getElementById('book-type').addEventListener('change', calcPrice);
+  document.getElementById('word-count').addEventListener('change', calcPrice);
+  document.getElementById('design-package').addEventListener('change', calcPrice);
+  document.getElementById('urgency').addEventListener('change', calcPrice);
+  calcPrice();
+
+  // FORM: HONEYPOT + MATH CHALLENGE
+  const form = document.getElementById('contact-form');
+  const submitBtn = document.getElementById('submit-btn');
+  const btnText = document.getElementById('btn-text');
+  const btnLoading = document.getElementById('btn-loading');
+  const successMsg = document.getElementById('form-success');
+  const errorMsg = document.getElementById('form-error');
+  const errorText = document.getElementById('error-text');
+  const emailField = document.getElementById('email-field');
+  const replytoField = document.getElementById('replyto-field');
+  const mathQuestion = document.getElementById('math-question');
+  const mathAnswer = document.getElementById('math-answer');
+  const mathCorrect = document.getElementById('math-correct');
+
+  emailField.addEventListener('input', function(){
+    replytoField.value = this.value;
+  });
+
+  function generateMathQuestion() {
+    const a = Math.floor(Math.random() * 10) + 1;
+    const b = Math.floor(Math.random() * 10) + 1;
+    const correct = a + b;
+    mathQuestion.textContent = a + ' + ' + b + ' = ؟';
+    mathCorrect.value = correct;
+    mathAnswer.value = '';
+  }
+  generateMathQuestion();
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    errorMsg.style.display = 'none';
+
+    const gotcha = form.querySelector('input[name="_gotcha"]');
+    if (gotcha && gotcha.value !== '') {
+      console.log('Honeypot triggered — spam blocked.');
+      return;
+    }
+
+    const userAnswer = parseInt(mathAnswer.value);
+    const correctAnswer = parseInt(mathCorrect.value);
+    if (isNaN(userAnswer) || userAnswer !== correctAnswer) {
+      errorMsg.style.display = 'block';
+      errorText.textContent = 'الإجابة الحسابية غير صحيحة. حاول مرة أخرى.';
+      generateMathQuestion();
+      return;
+    }
+
+    btnText.style.display = 'none';
+    btnLoading.style.display = 'inline';
+    submitBtn.disabled = true;
+    submitBtn.style.opacity = '0.7';
+
+    const formData = new FormData(form);
+    fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(response => {
+      if (response.ok) {
+        form.style.display = 'none';
+        successMsg.style.display = 'block';
+        window.scrollTo({ top: successMsg.offsetTop - 100, behavior: 'smooth' });
+      } else {
+        throw new Error('Network response was not ok.');
+      }
+    })
+    .catch(error => {
+      btnText.style.display = 'inline';
+      btnLoading.style.display = 'none';
+      submitBtn.disabled = false;
+      submitBtn.style.opacity = '1';
+      errorMsg.style.display = 'block';
+      errorText.textContent = 'حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى.';
+    });
+  });
+
+  if (window.location.search.includes('success')) {
+    form.style.display = 'none';
+    successMsg.style.display = 'block';
+  }
+</script>
+</body>
+</html>
