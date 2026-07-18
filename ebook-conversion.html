@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تحويل الكتب إلى EPUB وKFX — كتابك الأول</title>
+<meta name="description" content="نحوّل كتابك أو مصوراتك إلى كتاب إلكتروني احترافي بصيغتي EPUB وKFX، جاهز للقراءة على الكندل وكل الأجهزة الحديثة. تسعير عادل حسب حالة النص.">
+
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/logo-192.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_SA">
+<meta property="og:site_name" content="كتابك الأول">
+<meta property="og:title" content="تحويل الكتب إلى EPUB وKFX — كتابك الأول">
+<meta property="og:description" content="نحوّل كتابك أو مصوراتك إلى كتاب إلكتروني احترافي بصيغتي EPUB وKFX، جاهز للقراءة على الكندل وكل الأجهزة الحديثة.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;500;600;700;800&family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#ffffff;
+    --bg-soft:#faf9f6;
+    --ink:#17160f;
+    --ink-dim:#5c584e;
+    --ink-faint:#8b8677;
+    --line:#e8e4da;
+    --line-strong:#d8d3c5;
+    --accent:#0b6b4f;
+    --accent-dark:#084d39;
+    --accent-soft:rgba(11,107,79,0.07);
+    --accent-soft-strong:rgba(11,107,79,0.12);
+    --gold:#a9803f;
+    --gold-soft:rgba(169,128,63,0.08);
+    --wa:#25D366;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Cairo', sans-serif;
+    line-height:1.8;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{
+    font-family:'Alexandria', sans-serif;
+    font-weight:700;
+    letter-spacing:0.2px;
+    color:var(--ink);
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  ul{list-style:none;}
+  button{font-family:inherit;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+  ::selection{background:var(--accent); color:#fff;}
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible{
+    outline:2px solid var(--accent); outline-offset:2px; border-radius:2px;
+  }
+  .skip-link{
+    position:fixed; top:-60px; right:16px; z-index:1000;
+    background:var(--ink); color:#fff; padding:12px 20px;
+    border-radius:4px; font-weight:700; font-size:14px; transition:top .2s ease;
+  }
+  .skip-link:focus{top:16px;}
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky; top:0; right:0; left:0; z-index:500;
+    background:rgba(255,255,255,0.92);
+    -webkit-backdrop-filter:blur(14px);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 24px; max-width:1080px; margin:0 auto;
+  }
+  .logo{
+    font-family:'Alexandria', sans-serif; font-size:19px; font-weight:800;
+    color:var(--ink); display:flex; align-items:center; gap:10px;
+  }
+  .logo .mark{
+    width:26px;height:26px;border-radius:6px;
+    background:var(--ink);
+    position:relative; flex-shrink:0;
+  }
+  .logo .mark::before{
+    content:""; position:absolute; right:6px; top:5px; bottom:5px; width:2px; background:#fff;
+  }
+  .logo .mark::after{
+    content:""; position:absolute; right:11px; top:5px; bottom:5px; width:2px; background:#fff; opacity:.55;
+  }
+  nav ul{display:flex; gap:28px; align-items:center;}
+  nav ul a{font-size:14.5px; color:var(--ink-dim); transition:color .2s; font-weight:500;}
+  nav ul a:hover{color:var(--ink);}
+  .nav-cta{
+    background:var(--ink); color:#fff; padding:11px 22px;
+    border-radius:6px; font-weight:700; font-size:13.5px;
+    transition:background .2s ease;
+  }
+  .nav-cta:hover{background:var(--accent-dark);}
+  .nav-toggle{display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:6px;}
+  .nav-toggle span{width:22px;height:2px;background:var(--ink); transition:transform .3s ease, opacity .3s ease;}
+  .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav-toggle.open span:nth-child(2){opacity:0;}
+  .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .mobile-menu{
+    display:none; flex-direction:column;
+    max-height:0; overflow:hidden;
+    transition:max-height .3s ease;
+    border-top:0 solid var(--line);
+    background:var(--bg);
+  }
+  .mobile-menu.open{max-height:420px; border-top-width:1px;}
+  .mobile-menu a{
+    padding:16px 24px; color:var(--ink-dim); font-size:15.5px;
+    border-bottom:1px solid var(--line);
+  }
+  .mobile-menu .nav-cta{margin:16px 24px; text-align:center;}
+
+  /* ---------- hero ---------- */
+  .hero{padding:80px 0 60px; position:relative;}
+  .hero-grid{display:grid; grid-template-columns:1.05fr 0.7fr; gap:56px; align-items:center;}
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:10px;
+    color:var(--accent); font-size:13px; letter-spacing:1px;
+    margin-bottom:20px; font-weight:700;
+  }
+  .eyebrow::before{content:"";width:26px;height:1.5px;background:var(--accent);}
+  .hero h1{
+    font-size:clamp(32px, 4.2vw, 48px);
+    line-height:1.22;
+    margin-bottom:22px;
+    font-weight:800;
+  }
+  .hero h1 em{font-style:normal; color:var(--accent);}
+  .hero p.lead{
+    font-size:17px; color:var(--ink-dim); max-width:480px; margin-bottom:32px;
+  }
+  .cta-row{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:28px;}
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:15px 28px; border-radius:7px; font-weight:700; font-size:15px;
+    transition:transform .15s ease, background .2s ease, border-color .2s ease;
+    cursor:pointer; border:1.5px solid transparent;
+  }
+  .btn-primary{background:var(--ink); color:#fff;}
+  .btn-primary:hover{background:var(--accent-dark); transform:translateY(-2px);}
+  .btn-ghost{border-color:var(--line-strong); color:var(--ink); background:#fff;}
+  .btn-ghost:hover{border-color:var(--ink); transform:translateY(-2px);}
+  .btn-wa{background:var(--wa); color:#fff;}
+  .btn-wa:hover{background:#1fae57; transform:translateY(-2px);}
+  .btn-block{width:100%;}
+  .btn-sm{padding:10px 18px; font-size:13.5px;}
+
+  .trust-line{display:flex; gap:10px; flex-wrap:wrap; font-size:13.5px; color:var(--ink-dim);}
+  .trust-line span{display:inline-flex; align-items:center; gap:7px;}
+  .trust-line span::before{content:"✓"; color:var(--accent); font-weight:800;}
+
+  .hero-visual{
+    aspect-ratio:3/4; border-radius:14px;
+    background:var(--bg-soft);
+    border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center;
+    position:relative; overflow:hidden;
+  }
+  .hero-visual svg{width:56%; height:56%;}
+  .hero-visual .cap{
+    position:absolute; bottom:22px; right:22px; left:22px;
+    font-size:12.5px; color:var(--ink-faint); text-align:center;
+    font-weight:600; letter-spacing:.4px;
+  }
+
+  section{padding:72px 0;}
+  .section-head{max-width:640px; margin-bottom:44px;}
+  .section-head.center{margin-inline:auto; text-align:center;}
+  .section-head h2{font-size:clamp(25px, 2.8vw, 34px); margin-bottom:14px; line-height:1.3;}
+  .section-head p{color:var(--ink-dim); font-size:16px;}
+
+  .divider{height:1px; background:var(--line); width:100%;}
+
+  /* ---------- why / service grid ---------- */
+  .why-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:12px; overflow:hidden;}
+  .why-card{background:#fff; padding:36px 30px;}
+  .why-card .num{font-size:13px; color:var(--accent); letter-spacing:1px; margin-bottom:14px; display:block; font-weight:700;}
+  .why-card h3{font-size:19px; margin-bottom:10px;}
+  .why-card p{color:var(--ink-dim); font-size:14.5px;}
+
+  /* ---------- format note ---------- */
+  .format-note{
+    display:flex; gap:16px; background:var(--accent-soft); border:1px solid var(--accent-soft-strong);
+    border-radius:12px; padding:22px 26px; margin-top:28px; align-items:flex-start;
+  }
+  .format-note strong{color:var(--accent-dark);}
+  .format-note p{font-size:14.5px; color:var(--ink-dim);}
+
+  /* ---------- simple per-page pricing ---------- */
+  .rate-grid{display:grid; grid-template-columns:1fr 1fr; gap:20px; max-width:760px; margin:0 auto 32px;}
+  .rate-card{
+    background:#fff; border:1.5px solid var(--line); border-radius:14px;
+    padding:30px 28px; text-align:center;
+  }
+  .rate-card h3{font-size:17.5px; margin-bottom:8px;}
+  .rate-desc{color:var(--ink-dim); font-size:13.5px; margin-bottom:20px; min-height:38px;}
+  .rate-num{font-family:'Alexandria',sans-serif; font-size:34px; font-weight:800; color:var(--accent-dark); margin-bottom:8px;}
+  .rate-num span{font-size:14px; font-weight:600; color:var(--ink-dim); margin-inline-start:4px;}
+  .rate-min{font-size:13px; color:var(--ink-faint);}
+
+  .calc-box{
+    max-width:520px; margin:0 auto 32px; background:#fff; border:1.5px solid var(--line);
+    border-radius:14px; padding:28px 28px 24px; text-align:center;
+  }
+  .calc-row{display:flex; flex-direction:column; gap:8px; margin-bottom:18px;}
+  .calc-row label{font-size:13.5px; color:var(--ink-dim); font-weight:600;}
+  .calc-row input{text-align:center; font-size:20px; font-weight:700; max-width:160px; margin-inline:auto;}
+  .calc-toggle{display:inline-flex; background:var(--bg-soft); border:1px solid var(--line-strong); border-radius:999px; padding:5px; margin-bottom:20px;}
+  .calc-btn{padding:10px 22px; border-radius:999px; font-weight:700; font-size:13.5px; color:var(--ink-dim); background:none; border:none; cursor:pointer; transition:background .2s ease, color .2s ease;}
+  .calc-btn.active{background:var(--ink); color:#fff;}
+  .calc-result{border-top:1px solid var(--line); padding-top:18px; display:flex; flex-direction:column; gap:4px;}
+  .calc-result span{font-size:13px; color:var(--ink-faint);}
+  .calc-result strong{font-family:'Alexandria',sans-serif; font-size:28px; font-weight:800; color:var(--ink);}
+
+  .includes-both{
+    max-width:760px; margin:0 auto; text-align:center;
+    padding:22px 26px; border-top:1px solid var(--line);
+  }
+  .includes-both p{color:var(--ink-dim); font-size:14.5px;}
+  .includes-both strong{color:var(--ink);}
+
+  @media (max-width: 560px){
+    .rate-grid{grid-template-columns:1fr;}
+  }
+
+  /* ---------- process ---------- */
+  .steps{display:grid; grid-template-columns:repeat(4,1fr); gap:32px;}
+  .step{padding-top:22px; border-top:2px solid var(--ink);}
+  .step .step-num{font-size:13px; color:var(--accent); font-weight:700; margin-bottom:14px; display:block;}
+  .step h3{font-size:17px; margin-bottom:10px;}
+  .step p{font-size:14px; color:var(--ink-dim);}
+
+  /* ---------- faq ---------- */
+  .faq-list{max-width:760px; margin-inline:auto;}
+  .faq-item{border-bottom:1px solid var(--line);}
+  .faq-q{
+    width:100%; text-align:right; background:none; border:none;
+    padding:22px 0; font-size:16px; font-weight:600; color:var(--ink);
+    display:flex; justify-content:space-between; align-items:center; cursor:pointer;
+  }
+  .faq-q .plus{color:var(--accent); font-size:20px; font-weight:400; transition:transform .25s ease; flex-shrink:0; margin-inline-start:16px;}
+  .faq-item.open .faq-q .plus{transform:rotate(45deg);}
+  .faq-a{max-height:0; overflow:hidden; transition:max-height .3s ease;}
+  .faq-a p{padding-bottom:22px; color:var(--ink-dim); font-size:14.5px; max-width:680px;}
+
+  /* ---------- contact ---------- */
+  .contact-box{
+    background:var(--bg-soft); border:1px solid var(--line); border-radius:16px;
+    padding:48px; display:grid; grid-template-columns:1.2fr 0.8fr; gap:48px;
+  }
+  .contact-box h2{font-size:26px; margin-bottom:12px;}
+  .contact-box > div > p{color:var(--ink-dim); font-size:15px; margin-bottom:26px;}
+  .form-row{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:14px;}
+  input, select, textarea{
+    width:100%; padding:13px 16px; background:#fff;
+    border:1.5px solid var(--line-strong); border-radius:7px;
+    color:var(--ink); font-family:'Cairo', sans-serif; font-size:14.5px;
+    outline:none; transition:border-color .2s;
+  }
+  input:focus, select:focus, textarea:focus{border-color:var(--accent);}
+  textarea{min-height:96px; resize:vertical; margin-bottom:14px;}
+  .math-row{display:flex; align-items:center; gap:12px; margin-bottom:18px; font-size:14px; color:var(--ink-dim);}
+  .math-row input{max-width:110px; margin:0;}
+  .math-row strong{color:var(--accent);}
+
+  .contact-side{border-inline-start:1px solid var(--line); padding-inline-start:48px; display:flex; flex-direction:column; gap:14px;}
+  .contact-side h3{font-size:16px; margin-bottom:6px;}
+  .contact-side p{color:var(--ink-dim); font-size:14px; margin-bottom:10px;}
+
+  #form-success, #form-error{display:none; border-radius:8px; padding:20px; margin-bottom:20px; text-align:center; font-size:14.5px;}
+  #form-success{background:rgba(37,211,102,0.1); border:1.5px solid var(--wa); color:var(--accent-dark);}
+  #form-error{background:rgba(180,50,50,0.08); border:1.5px solid #b43232; color:#8f2626;}
+
+  /* ---------- footer ---------- */
+  footer{border-top:1px solid var(--line); padding:48px 0 32px;}
+  footer .wrap{display:flex; flex-direction:column; align-items:center; gap:20px; text-align:center;}
+  .footer-links{display:flex; gap:24px; flex-wrap:wrap; justify-content:center;}
+  .footer-links a{color:var(--ink-dim); font-size:14px;}
+  .footer-links a:hover{color:var(--ink);}
+  footer p{color:var(--ink-faint); font-size:13px;}
+
+  /* ---------- floating whatsapp ---------- */
+  .float-wa{
+    position:fixed; left:20px; bottom:20px; z-index:400;
+    width:56px; height:56px; border-radius:50%;
+    background:var(--wa); display:flex; align-items:center; justify-content:center;
+    box-shadow:0 10px 24px rgba(37,211,102,0.35);
+    transition:transform .2s ease;
+  }
+  .float-wa:hover{transform:scale(1.08);}
+  .float-wa svg{width:26px;height:26px;}
+
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .reveal{opacity:1; transform:none; transition:none;}
+  }
+
+  @media (max-width: 880px){
+    nav ul, .nav-cta.desktop-only{display:none;}
+    .nav-toggle{display:flex;}
+    .mobile-menu{display:flex;}
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-visual{max-width:260px; margin:0 auto;}
+    .why-grid{grid-template-columns:1fr;}
+    .steps{grid-template-columns:1fr 1fr; row-gap:36px;}
+    .contact-box{grid-template-columns:1fr; padding:32px 24px;}
+    .contact-side{border-inline-start:none; border-top:1px solid var(--line); padding-inline-start:0; padding-top:24px;}
+    .form-row{grid-template-columns:1fr;}
+  }
+  @media (max-width: 560px){
+    .steps{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">تخطَّ إلى المحتوى</a>
+
+<header id="main-header">
+  <nav aria-label="التنقل الرئيسي">
+    <a href="index.html" class="logo"><span class="mark"></span> كتابك الأول</a>
+    <ul>
+      <li><a href="index.html">الرئيسية</a></li>
+      <li><a href="#service">الخدمة</a></li>
+      <li><a href="#pricing">الأسعار</a></li>
+      <li><a href="#process">كيف نعمل</a></li>
+      <li><a href="#faq">الأسئلة الشائعة</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta desktop-only"><span>احصل على عرض سعر</span></a>
+    <button class="nav-toggle" aria-label="فتح القائمة" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu">
+    <a href="index.html">الرئيسية</a>
+    <a href="#service">الخدمة</a>
+    <a href="#pricing">الأسعار</a>
+    <a href="#process">كيف نعمل</a>
+    <a href="#faq">الأسئلة الشائعة</a>
+    <a href="#contact" class="nav-cta">احصل على عرض سعر</a>
+  </div>
+</header>
+
+<section class="hero" id="main">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">تحويل الكتب إلى صيغ إلكترونية</div>
+      <h1>حوّل كتابك إلى نسخة إلكترونية تُقرأ على <em>الكندل</em> وكل الأجهزة الحديثة</h1>
+      <p class="lead">سواء كان نص كتابك جاهزًا ومنسّقًا، أو مجرد صور ممسوحة ضوئيًا لصفحات مطبوعة، نحوّله لك إلى نسخة إلكترونية احترافية بصيغتي EPUB وKFX، بفهرس تفاعلي وتنسيق يليق بالقراءة الرقمية.</p>
+      <div class="cta-row">
+        <a href="#contact" class="btn btn-primary">احصل على عرض سعر لكتابك</a>
+        <a href="#pricing" class="btn btn-ghost">شاهد الأسعار</a>
+      </div>
+      <div class="trust-line">
+        <span>تسليم بصيغتي EPUB وKFX معًا</span>
+        <span>فهرس فصول تفاعلي</span>
+        <span>تسعير حسب حالة النص فعليًا</span>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#17160f" stroke-width="1.6">
+        <rect x="20" y="12" width="60" height="76" rx="4"/>
+        <path d="M28 28 H72 M28 38 H72 M28 48 H58" stroke-width="1.2"/>
+        <path d="M20 68 H80" stroke-dasharray="2 3"/>
+        <path d="M34 78 H66" stroke-width="1.2"/>
+      </svg>
+      <div class="cap">من ورق أو ملف Word، إلى كتاب إلكتروني جاهز</div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<section id="service">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">لماذا هذه الخدمة</div>
+      <h2>كتابك جاهز، لكنه غير قابل للقراءة على الأجهزة الحديثة؟</h2>
+      <p>كثير من الكتب موجودة إما كملف Word أو PDF غير منسّق للقراءة الرقمية، أو حتى كصور ورقية ممسوحة ضوئيًا فقط. نحوّل الحالتين إلى كتاب إلكتروني حقيقي، متوافق مع كيندل وبقية القارئات.</p>
+    </div>
+    <div class="why-grid reveal">
+      <div class="why-card">
+        <span class="num">01</span>
+        <h3>صيغتا EPUB وKFX معًا</h3>
+        <p>EPUB يعمل على معظم القارئات والتطبيقات، وKFX هي الصيغة التي يفضّلها جهاز كيندل نفسه لعرض أفضل للنص والصور.</p>
+      </div>
+      <div class="why-card">
+        <span class="num">02</span>
+        <h3>فهرسة وتنسيق حقيقي</h3>
+        <p>فهرس فصول تفاعلي، عناوين منسّقة، وتباعد وخطوط مضبوطة للقراءة المريحة على الشاشة، لا مجرد تحويل شكلي للملف.</p>
+      </div>
+      <div class="why-card">
+        <span class="num">03</span>
+        <h3>يشمل المصورات أيضًا</h3>
+        <p>إن كان كتابك صورًا فقط، نقوم بتفريغ النص ومراجعته لغويًا قبل التحويل، وليس مجرد وضع الصور داخل ملف إلكتروني.</p>
+      </div>
+    </div>
+
+    <div class="format-note reveal">
+      <div>
+        <p><strong>ملاحظة مهمة:</strong> نقدّم هذه الخدمة فقط للكتب والمصورات التي تملك أنت حقوق نشرها أو تحويلها (مؤلَّفة لك، أو حصلت على إذن صريح من صاحبها). لا نحوّل كتبًا مطبوعة تجاريًا لا تملك حقوق نسخها الرقمي.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" style="background:var(--bg-soft);">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <div class="eyebrow" style="justify-content:center;">التسعير</div>
+      <h2>سعر بالصفحة، بلا تعقيد</h2>
+      <p>تدفع فقط على عدد صفحات كتابك، بسعرين اثنين حسب حالة النص. لا باقات، ولا شروط مخفية.</p>
+    </div>
+
+    <div class="rate-grid reveal">
+      <div class="rate-card">
+        <h3>النص جاهز ومحرَّر</h3>
+        <p class="rate-desc">ملف Word أو PDF بنص مكتوب فعليًا، جاهز للنسخ.</p>
+        <div class="rate-num">1<span> ريال / الصفحة</span></div>
+        <div class="rate-min">بحد أدنى 149 ريال للطلب الواحد</div>
+      </div>
+      <div class="rate-card">
+        <h3>النص عبارة عن صور</h3>
+        <p class="rate-desc">صفحات ممسوحة ضوئيًا، تحتاج تفريغ النص أولًا.</p>
+        <div class="rate-num">2.5<span> ريال / الصفحة</span></div>
+        <div class="rate-min">بحد أدنى 299 ريال للطلب الواحد</div>
+      </div>
+    </div>
+
+    <div class="calc-box reveal">
+      <div class="calc-row">
+        <label for="calc-pages">عدد صفحات كتابك</label>
+        <input type="number" id="calc-pages" min="1" value="200" inputmode="numeric">
+      </div>
+      <div class="calc-toggle">
+        <button class="calc-btn active" id="calc-ready" type="button">النص جاهز</button>
+        <button class="calc-btn" id="calc-scan" type="button">النص صور</button>
+      </div>
+      <div class="calc-result">
+        <span>السعر التقديري</span>
+        <strong id="calc-price">200 ريال</strong>
+      </div>
+    </div>
+
+    <div class="includes-both reveal">
+      <p><strong>في كل الحالات:</strong> السعر شامل تسليم الصيغتين EPUB وKFX معًا، بلا رسوم إضافية. المدة المتوقعة: 3–5 أيام عمل للنص الجاهز، و7–14 يومًا للنص المصوَّر حسب عدد الصفحات. للكتب الكبيرة جدًا (أكثر من 500 صفحة) نقدّم خصمًا خاصًا — تواصل معنا.</p>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">كيف نعمل</div>
+      <h2>من الملف الذي لديك، إلى كتاب إلكتروني جاهز</h2>
+    </div>
+    <div class="steps reveal">
+      <div class="step">
+        <span class="step-num">01 — الاستلام</span>
+        <h3>ترسل لنا الملف</h3>
+        <p>ملف Word أو PDF جاهز، أو صور/سكانات لصفحات الكتاب، بأي جودة متوفرة لديك.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">02 — التجهيز</span>
+        <h3>تفريغ النص إن لزم</h3>
+        <p>في حال كان الكتاب صورًا، نفرّغ النص كاملًا ونراجعه لغويًا قبل الانتقال للتنسيق.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">03 — التحويل</span>
+        <h3>تنسيق وتحويل للصيغتين</h3>
+        <p>فهرسة، تباعد، وضبط الصور، ثم إنتاج نسختي EPUB وKFX جاهزتين للأجهزة الحديثة.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">04 — التسليم</span>
+        <h3>مراجعة وتسليم نهائي</h3>
+        <p>نتأكد من عمل الملفين على جهاز كيندل فعليًا، ثم نرسلهما لك جاهزين للاستخدام.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <div class="eyebrow" style="justify-content:center;">الأسئلة الشائعة</div>
+      <h2>كل ما تحتاج معرفته قبل الطلب</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-q">ما الفرق بين EPUB وKFX؟<span class="plus">+</span></button>
+        <div class="faq-a"><p>EPUB هي الصيغة القياسية المفتوحة، وتعمل على معظم القارئات والتطبيقات. أما KFX فهي صيغة كيندل الحديثة، وتمنح عرضًا أدق للنص والصور تحديدًا على أجهزة كيندل. نسلّمك الصيغتين معًا لتغطية جميع الأجهزة.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">كيف تحددون إن كان نصي "جاهز" أم "صور"؟<span class="plus">+</span></button>
+        <div class="faq-a"><p>ببساطة: إن كان بإمكانك تحديد النص ونسخه من الملف، فهو جاهز. أما إن كان الملف عبارة عن صفحات ممسوحة ضوئيًا أو صورًا لا يمكن نسخ نصها مباشرة، فهو يدخل ضمن فئة الصور. أرسل لنا نموذجًا من ملفك وسنؤكد لك الفئة والسعر قبل البدء.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">هل تحوّلون أي كتاب حتى لو لم أكن مؤلفه؟<span class="plus">+</span></button>
+        <div class="faq-a"><p>نقدّم الخدمة فقط للكتب التي تملك حقوق نشرها أو تحويلها الرقمي، سواء كنت المؤلف أو حصلت على إذن صريح من صاحب الحقوق.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">هل يمكن طلب صيغة MOBI بدل KFX؟<span class="plus">+</span></button>
+        <div class="faq-a"><p>نعم، إن كان جهازك القديم لا يدعم KFX يمكننا تسليم MOBI بدلًا منها أو بجانبها دون تكلفة إضافية، فقط أخبرنا بذلك عند التواصل.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">هل السعر يشمل تصميم غلاف جديد؟<span class="plus">+</span></button>
+        <div class="faq-a"><p>الأسعار المذكورة تشمل استخدام الغلاف الذي ترسله لنا داخل الملف الإلكتروني. إن أردت تصميم غلاف جديد من الصفر، يمكن إضافته كخدمة منفصلة بسعر يُحدَّد حسب طلبك.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">كيف أرسل لكم الملف أو الصور؟<span class="plus">+</span></button>
+        <div class="faq-a"><p>عبر رابط تحميل (جوجل درايف أو ما شابه) ترسله لنا في نموذج التواصل أو عبر واتساب، بعد أن نؤكد معك تفاصيل الطلب والسعر.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-box reveal">
+      <div>
+        <h2>عندك كتاب جاهز لتحويله؟</h2>
+        <p>أخبرنا عن حالة نصك (جاهز أو صور) وعدد الصفحات تقريبًا، وسنرد عليك بالسعر الدقيق وخطوات البدء خلال ساعات العمل.</p>
+
+        <div id="form-success">
+          <strong>✓ تم إرسال رسالتك بنجاح.</strong> سنرد عليك خلال ساعات العمل القادمة.
+        </div>
+        <div id="form-error">
+          <span id="error-text">حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى.</span>
+        </div>
+
+        <form action="https://formspree.io/f/xzdnzgng" method="POST" id="contact-form">
+          <input type="hidden" name="_replyto" id="replyto-field">
+          <input type="hidden" name="_subject" value="استفسار تحويل كتاب إلكتروني — كتابك الأول">
+          <div style="position:absolute; left:-9999px; opacity:0; height:0; width:0; overflow:hidden;">
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="form-row">
+            <input type="text" name="name" placeholder="الاسم الكامل" required>
+            <input type="email" name="email" placeholder="البريد الإلكتروني" required id="email-field">
+          </div>
+          <div class="form-row">
+            <input type="tel" name="phone" placeholder="رقم الجوال (مع كود الدولة)">
+            <select name="package" id="package-field">
+              <option value="">حالة نص كتابك</option>
+              <option>نص جاهز ومحرَّر</option>
+              <option>نص عبارة عن صور</option>
+              <option>غير متأكد بعد</option>
+            </select>
+          </div>
+          <textarea name="message" placeholder="اخبرنا باختصار عن كتابك: هل النص جاهز أم صور، وعدد الصفحات تقريبًا، ورابط تحميل الملف إن توفر..." required></textarea>
+
+          <div class="math-row">
+            <label for="math-answer">للتأكد من أنك لست روبوتًا: <strong id="math-question"></strong></label>
+            <input type="number" id="math-answer" required>
+            <input type="hidden" id="math-correct" name="math_correct">
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block" id="submit-btn">
+            <span id="btn-text">إرسال الاستفسار</span>
+            <span id="btn-loading" style="display:none;">جاري الإرسال...</span>
+          </button>
+        </form>
+      </div>
+
+      <div class="contact-side">
+        <div>
+          <h3>تواصل مباشر</h3>
+          <p>إن كنت تفضّل التحدث معنا مباشرة، تواصل عبر واتساب أو البريد الإلكتروني.</p>
+        </div>
+        <a href="https://wa.me/966510550739?text=مرحبًا%2C%20أرغب%20بالاستفسار%20عن%20خدمة%20تحويل%20كتابي%20إلى%20EPUB%20وKFX" target="_blank" rel="noopener" class="btn btn-wa btn-block">تواصل عبر واتساب</a>
+        <a href="mailto:almtfayl028@gmail.com" class="btn btn-ghost btn-block">راسلنا عبر البريد</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<a href="https://wa.me/966510550739?text=مرحبًا%2C%20أرغب%20بالاستفسار%20عن%20خدمة%20تحويل%20كتابي%20إلى%20EPUB%20وKFX" target="_blank" rel="noopener" class="float-wa" aria-label="تواصل عبر واتساب">
+  <svg viewBox="0 0 32 32" fill="#fff"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.7 4.61 1.902 6.478L4 29l7.72-1.865A11.94 11.94 0 0 0 16.001 27C22.63 27 28 21.627 28 15S22.63 3 16.001 3zm0 21.818a9.78 9.78 0 0 1-4.99-1.367l-.358-.213-4.583 1.107 1.127-4.47-.234-.367A9.78 9.78 0 0 1 5.909 15c0-5.57 4.523-10.091 10.092-10.091S26.091 9.43 26.091 15 21.57 24.818 16.001 24.818zm5.552-7.55c-.304-.152-1.797-.887-2.076-.988-.279-.101-.482-.152-.685.152-.203.304-.786.988-.964 1.19-.177.203-.355.228-.659.076-.304-.152-1.284-.473-2.446-1.51-.904-.806-1.514-1.802-1.692-2.106-.177-.304-.019-.469.133-.62.137-.136.304-.355.456-.532.152-.177.203-.304.304-.507.101-.203.051-.38-.025-.532-.076-.152-.685-1.651-.939-2.262-.247-.594-.499-.514-.685-.523l-.583-.01c-.203 0-.532.076-.811.38-.279.304-1.065 1.04-1.065 2.538 0 1.498 1.09 2.945 1.242 3.148.152.203 2.146 3.277 5.2 4.596.727.314 1.294.501 1.736.641.729.232 1.393.199 1.918.121.585-.087 1.797-.735 2.05-1.445.253-.71.253-1.318.177-1.445-.076-.127-.279-.203-.583-.355z"/></svg>
+</a>
+
+<footer>
+  <div class="wrap">
+    <div class="logo"><span class="mark"></span> كتابك الأول</div>
+    <div class="footer-links">
+      <a href="index.html">الرئيسية</a>
+      <a href="#service">الخدمة</a>
+      <a href="#pricing">الأسعار</a>
+      <a href="#process">كيف نعمل</a>
+      <a href="#faq">الأسئلة الشائعة</a>
+      <a href="#contact">تواصل معنا</a>
+    </div>
+    <p>© 2026 كتابك الأول — فريق سعودي متخصص، جميع الحقوق محفوظة لعملائنا في كتبهم.</p>
+  </div>
+</footer>
+
+<script>
+  // mobile nav toggle
+  const toggleBtn = document.querySelector('.nav-toggle');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  toggleBtn.addEventListener('click', ()=>{
+    const open = toggleBtn.classList.toggle('open');
+    mobileMenu.classList.toggle('open', open);
+    toggleBtn.setAttribute('aria-expanded', open);
+  });
+  mobileMenu.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click', ()=>{
+      toggleBtn.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      toggleBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.12});
+  revealEls.forEach(el=>io.observe(el));
+
+  // faq accordion
+  document.querySelectorAll('.faq-item').forEach(item=>{
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    q.addEventListener('click', ()=>{
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(o=>{
+        o.classList.remove('open');
+        o.querySelector('.faq-a').style.maxHeight = null;
+      });
+      if(!isOpen){
+        item.classList.add('open');
+        a.style.maxHeight = a.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // pricing calculator
+  const calcPages = document.getElementById('calc-pages');
+  const calcReadyBtn = document.getElementById('calc-ready');
+  const calcScanBtn = document.getElementById('calc-scan');
+  const calcPrice = document.getElementById('calc-price');
+  let calcType = 'ready';
+  const RATES = { ready: { perPage: 1, min: 149 }, scan: { perPage: 2.5, min: 299 } };
+
+  function updateCalc(){
+    let pages = parseInt(calcPages.value);
+    if(isNaN(pages) || pages < 1) pages = 1;
+    const rate = RATES[calcType];
+    const total = Math.max(Math.round(pages * rate.perPage), rate.min);
+    calcPrice.textContent = total.toLocaleString('ar') + ' ريال';
+  }
+  calcReadyBtn.addEventListener('click', ()=>{
+    calcType = 'ready';
+    calcReadyBtn.classList.add('active'); calcScanBtn.classList.remove('active');
+    updateCalc();
+  });
+  calcScanBtn.addEventListener('click', ()=>{
+    calcType = 'scan';
+    calcScanBtn.classList.add('active'); calcReadyBtn.classList.remove('active');
+    updateCalc();
+  });
+  calcPages.addEventListener('input', updateCalc);
+  updateCalc();
+
+  // FORM: HONEYPOT + MATH CHALLENGE
+  const form = document.getElementById('contact-form');
+  const submitBtn = document.getElementById('submit-btn');
+  const btnText = document.getElementById('btn-text');
+  const btnLoading = document.getElementById('btn-loading');
+  const successMsg = document.getElementById('form-success');
+  const errorMsg = document.getElementById('form-error');
+  const errorText = document.getElementById('error-text');
+  const emailField = document.getElementById('email-field');
+  const replytoField = document.getElementById('replyto-field');
+  const mathQuestion = document.getElementById('math-question');
+  const mathAnswer = document.getElementById('math-answer');
+  const mathCorrect = document.getElementById('math-correct');
+
+  emailField.addEventListener('input', function(){
+    replytoField.value = this.value;
+  });
+
+  function generateMathQuestion() {
+    const a = Math.floor(Math.random() * 10) + 1;
+    const b = Math.floor(Math.random() * 10) + 1;
+    mathQuestion.textContent = a + ' + ' + b + ' = ؟';
+    mathCorrect.value = a + b;
+    mathAnswer.value = '';
+  }
+  generateMathQuestion();
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    errorMsg.style.display = 'none';
+
+    const gotcha = form.querySelector('input[name="_gotcha"]');
+    if (gotcha && gotcha.value !== '') { return; }
+
+    const userAnswer = parseInt(mathAnswer.value);
+    const correctAnswer = parseInt(mathCorrect.value);
+    if (isNaN(userAnswer) || userAnswer !== correctAnswer) {
+      errorMsg.style.display = 'block';
+      errorText.textContent = 'الإجابة الحسابية غير صحيحة. حاول مرة أخرى.';
+      generateMathQuestion();
+      return;
+    }
+
+    btnText.style.display = 'none';
+    btnLoading.style.display = 'inline';
+    submitBtn.disabled = true;
+    submitBtn.style.opacity = '0.7';
+
+    const formData = new FormData(form);
+    fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(response => {
+      if (response.ok) {
+        form.style.display = 'none';
+        successMsg.style.display = 'block';
+        window.scrollTo({ top: successMsg.offsetTop - 100, behavior: 'smooth' });
+      } else {
+        throw new Error('Network response was not ok.');
+      }
+    })
+    .catch(() => {
+      btnText.style.display = 'inline';
+      btnLoading.style.display = 'none';
+      submitBtn.disabled = false;
+      submitBtn.style.opacity = '1';
+      errorMsg.style.display = 'block';
+      errorText.textContent = 'حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى.';
+    });
+  });
+
+  if (window.location.search.includes('success')) {
+    form.style.display = 'none';
+    successMsg.style.display = 'block';
+  }
+</script>
+</body>
+</html>
